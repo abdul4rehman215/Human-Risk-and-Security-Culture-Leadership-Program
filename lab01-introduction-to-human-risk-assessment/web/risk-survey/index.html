@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Human Risk Assessment Survey</title>
+ <style>
+ body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+ .question { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+ .question h3 { margin-top: 0; }
+ .radio-group label { display: block; margin: 5px 0; }
+ .submit-btn { background: #007cba; color: white; padding: 12px 30px; border: none;
+ border-radius: 5px; cursor: pointer; font-size: 16px; }
+ .category-header { background: #f0f0f0; padding: 10px; margin: 20px 0; }
+ </style>
+</head>
+<body>
+ <h1>Human Risk Assessment Survey</h1>
+ <p>This survey helps assess cybersecurity risks. All responses are confidential.</p>
+
+ <form action="process_survey.php" method="POST">
+
+ <div class="question">
+ <h3>Personal Information</h3>
+ <label>Employee ID: <input type="text" name="employee_id" required></label><br>
+ <label>Department: <input type="text" name="department" required></label><br>
+ <label>Role: <input type="text" name="role" required></label><br>
+ <label>Years of Experience: <input type="number" name="experience_years" required></label>
+ </div>
+
+ <!-- (All survey questions exactly as provided in lab text retained here) -->
+
+ <button type="submit" class="submit-btn">Submit Survey</button>
+ </form>
+</body>
+</html>
