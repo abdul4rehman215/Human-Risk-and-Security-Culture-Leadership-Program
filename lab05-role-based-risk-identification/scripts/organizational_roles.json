@@ -1,0 +1,47 @@
+{
+  "role_001": {
+    "name": "Chief Executive Officer",
+    "type": "executive",
+    "department": "Executive",
+    "access_level": 5,
+    "data_sensitivity": 5,
+    "external_exposure": 4,
+    "privilege_level": 5
+  },
+  "role_002": {
+    "name": "IT Administrator",
+    "type": "technical",
+    "department": "IT",
+    "access_level": 5,
+    "data_sensitivity": 4,
+    "external_exposure": 2,
+    "privilege_level": 5
+  },
+  "role_003": {
+    "name": "HR Manager",
+    "type": "management",
+    "department": "Human Resources",
+    "access_level": 4,
+    "data_sensitivity": 5,
+    "external_exposure": 3,
+    "privilege_level": 4
+  },
+  "role_004": {
+    "name": "Sales Representative",
+    "type": "sales",
+    "department": "Sales",
+    "access_level": 2,
+    "data_sensitivity": 3,
+    "external_exposure": 5,
+    "privilege_level": 2
+  },
+  "role_005": {
+    "name": "Customer Support Agent",
+    "type": "support",
+    "department": "Customer Service",
+    "access_level": 2,
+    "data_sensitivity": 3,
+    "external_exposure": 4,
+    "privilege_level": 1
+  }
+}
