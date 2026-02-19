@@ -1,0 +1,106 @@
+===============================
+Lab 1 — Full Command Output Log
+Environment: Ubuntu 24.04
+User: toor
+===============================
+
+# Directory Structure Created
+.:
+data  framework  reports  scripts  surveys
+
+./data:
+assessment-data.csv
+
+./framework:
+risk-framework.md  risk-indicators.txt
+
+./reports:
+
+./scripts:
+
+./surveys:
+
+# apt update
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+12 packages can be upgraded.
+
+# apt install python3 python3-pip python3-venv sqlite3 acl
+acl is already the newest version (2.3.2-1).
+python3 is already the newest version (3.12.3-0ubuntu1).
+python3-pip is already the newest version (24.0+dfsg-1ubuntu1).
+python3-venv is already the newest version (3.12.3-0ubuntu1).
+sqlite3 is already the newest version (3.45.1-1ubuntu2).
+0 upgraded, 0 newly installed, 0 to remove.
+
+# pip install packages
+Successfully installed contourpy cycler fonttools kiwisolver matplotlib numpy packaging pandas pillow pyparsing python-dateutil pytz seaborn six tzdata
+
+# Database created
+Database created successfully
+-rw-rw-r-- 1 toor toor 24K Feb 19 15:42 /home/toor/human-risk-assessment/data/assessment.db
+
+# Apache installation
+Setting up apache2 (2.4.58-1ubuntu8) ...
+Enabling module mpm_event.
+Enabling module ssl.
+Enabling module php8.3.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+
+# Apache status
+active
+
+# Curl survey check
+HTTP/1.1 200 OK
+Server: Apache/2.4.58 (Ubuntu)
+Content-Type: text/html
+
+# Sample Data Generation
+Generated sample data for 20 participants
+
+# Verify participants
+20
+
+# Verify responses
+200
+
+# Risk Analysis Execution
+Analyzing participant data...
+Participant 1: overall_score=58 category_scores={'password_security': 50, 'email_security': 62, 'social_engineering': 38, 'device_security': 75, 'training_awareness': 63}
+Participant 2: overall_score=66 category_scores={'password_security': 69, 'email_security': 75, 'social_engineering': 44, 'device_security': 50, 'training_awareness': 75}
+Participant 3: overall_score=73 category_scores={'password_security': 75, 'email_security': 81, 'social_engineering': 56, 'device_security': 83, 'training_awareness': 63}
+Participant 4: overall_score=61 category_scores={'password_security': 56, 'email_security': 69, 'social_engineering': 50, 'device_security': 58, 'training_awareness': 63}
+Participant 5: overall_score=49 category_scores={'password_security': 44, 'email_security': 50, 'social_engineering': 31, 'device_security': 67, 'training_awareness': 63}
+Participant 6: overall_score=70 category_scores={'password_security': 75, 'email_security': 56, 'social_engineering': 69, 'device_security': 58, 'training_awareness': 75}
+Participant 7: overall_score=55 category_scores={'password_security': 38, 'email_security': 62, 'social_engineering': 44, 'device_security': 67, 'training_awareness': 63}
+Participant 8: overall_score=77 category_scores={'password_security': 75, 'email_security': 88, 'social_engineering': 63, 'device_security': 67, 'training_awareness': 75}
+Participant 9: overall_score=63 category_scores={'password_security': 50, 'email_security': 69, 'social_engineering': 56, 'device_security': 75, 'training_awareness': 63}
+Participant 10: overall_score=59 category_scores={'password_security': 56, 'email_security': 56, 'social_engineering': 44, 'device_security': 75, 'training_awareness': 63}
+Participant 11: overall_score=71 category_scores={'password_security': 75, 'email_security': 62, 'social_engineering': 63, 'device_security': 67, 'training_awareness': 75}
+Participant 12: overall_score=67 category_scores={'password_security': 63, 'email_security': 69, 'social_engineering': 56, 'device_security': 58, 'training_awareness': 75}
+Participant 13: overall_score=52 category_scores={'password_security': 44, 'email_security': 62, 'social_engineering': 38, 'device_security': 58, 'training_awareness': 63}
+Participant 14: overall_score=74 category_scores={'password_security': 69, 'email_security': 75, 'social_engineering': 63, 'device_security': 75, 'training_awareness': 75}
+Participant 15: overall_score=60 category_scores={'password_security': 56, 'email_security': 69, 'social_engineering': 44, 'device_security': 67, 'training_awareness': 63}
+Participant 16: overall_score=68 category_scores={'password_security': 63, 'email_security': 62, 'social_engineering': 63, 'device_security': 58, 'training_awareness': 75}
+Participant 17: overall_score=56 category_scores={'password_security': 50, 'email_security': 62, 'social_engineering': 44, 'device_security': 58, 'training_awareness': 63}
+Participant 18: overall_score=79 category_scores={'password_security': 81, 'email_security': 88, 'social_engineering': 56, 'device_security': 75, 'training_awareness': 75}
+Participant 19: overall_score=64 category_scores={'password_security': 56, 'email_security': 75, 'social_engineering': 50, 'device_security': 67, 'training_awareness': 63}
+Participant 20: overall_score=72 category_scores={'password_security': 75, 'email_security': 69, 'social_engineering': 63, 'device_security': 67, 'training_awareness': 75}
+
+Processed scores for 20 participants
+Generating reports...
+Saved risk distribution chart: ../reports/risk_distribution.png
+Saved category scores chart: ../reports/category_scores.png
+Saved summary report: ../reports/summary_report.md
+Analysis complete.
+
+# Risk score rows
+120
+
+# SQLite distribution query
+Medium Risk|15
+High Risk|5
