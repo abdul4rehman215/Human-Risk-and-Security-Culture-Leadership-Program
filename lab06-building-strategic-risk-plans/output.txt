@@ -1,0 +1,199 @@
+Lab 6: Building Strategic Risk Plans
+Ubuntu 24.04 (Cloud Lab – Amazon EC2)
+
+========================
+Environment Verification
+========================
+
+toor@ip-172-31-10-186:~$ cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.1 LTS (Noble Numbat)"
+
+toor@ip-172-31-10-186:~$ python3 --version
+Python 3.12.3
+
+==========================================
+Task 1: Build Risk-Behavior-Culture Framework
+==========================================
+
+toor@ip-172-31-10-186:~$ mkdir -p ~/risk_management_lab
+
+toor@ip-172-31-10-186:~$ cd ~/risk_management_lab
+
+toor@ip-172-31-10-186:~/risk_management_lab$ pip3 install pandas matplotlib seaborn numpy
+Requirement already satisfied: pandas
+Requirement already satisfied: matplotlib
+Requirement already satisfied: seaborn
+Requirement already satisfied: numpy
+
+------------------------------------------
+Run: risk_framework.py
+------------------------------------------
+
+toor@ip-172-31-10-186:~/risk_management_lab$ chmod +x risk_framework.py
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 risk_framework.py
+=== Risk-Behavior-Culture Alignment Framework ===
+
+[INFO] Alignment matrix generated.
+[INFO] Total combinations: 60
+[INFO] Alignment status distribution:
+critically_misaligned    27
+poorly_aligned           18
+moderately_aligned       10
+well_aligned              5
+
+[INFO] Sample data (first 10 rows):
+ risk_type severity frequency behavior_level  culture_score  risk_score      alignment_status
+   phishing     high     daily            low            0.3       10.00  critically_misaligned
+   phishing     high     daily            low            0.5       10.00  critically_misaligned
+   phishing     high     daily            low            0.7        9.45  critically_misaligned
+   phishing     high     daily            low            0.9        8.25  critically_misaligned
+   phishing     high     daily         medium            0.3        8.10  critically_misaligned
+   phishing     high     daily         medium            0.5        7.35  critically_misaligned
+   phishing     high     daily         medium            0.7        6.60     poorly_aligned
+   phishing     high     daily         medium            0.9        5.85     poorly_aligned
+   phishing     high     daily           high            0.3        4.32  moderately_aligned
+   phishing     high     daily           high            0.5        3.92  moderately_aligned
+
+[INFO] Saved: risk_alignment_matrix.csv
+[INFO] Saved: risk_framework_data.json
+
+toor@ip-172-31-10-186:~/risk_management_lab$ ls -lh
+-rw-r--r--  risk_alignment_matrix.csv
+-rw-r--r--  risk_framework_data.json
+
+------------------------------------------
+Run: risk_visualization.py
+------------------------------------------
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 risk_visualization.py
+[INFO] Visualizations generated successfully:
+ - risk_heatmap.png
+ - alignment_distribution.png
+ - culture_impact_chart.png
+
+toor@ip-172-31-10-186:~/risk_management_lab$ ls *.png
+risk_heatmap.png
+alignment_distribution.png
+culture_impact_chart.png
+
+======================================
+Task 2: Implement Role-Based Assessment
+======================================
+
+------------------------------------------
+Run: role_risk_assessment.py
+------------------------------------------
+
+toor@ip-172-31-10-186:~/risk_management_lab$ chmod +x role_risk_assessment.py
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 role_risk_assessment.py
+=== Role-Based Risk Assessment ===
+
+[INFO] Role-risk assessment created.
+[INFO] Total role-risk combinations: 20
+[INFO] Priority distribution:
+high       9
+critical   6
+medium     4
+low        1
+
+[INFO] Top 3 priority actions:
+- Priority: critical | Avg Score: 8.86 | Timeline: immediate (1-2 weeks)
+  Top Roles: it_admin, executive, finance
+  Top Risks: insider_threats, social_engineering, phishing
+- Priority: high | Avg Score: 6.75 | Timeline: urgent (1 month)
+  Top Roles: executive, it_admin, finance
+  Top Risks: phishing, social_engineering, weak_passwords
+- Priority: medium | Avg Score: 4.68 | Timeline: planned (3 months)
+  Top Roles: general_staff, finance, executive
+  Top Risks: weak_passwords, unsecured_devices, phishing
+
+[INFO] Saved outputs:
+ - role_based_risk_assessment.csv
+ - prioritized_action_plan.json
+ - organizational_roles.json
+
+------------------------------------------
+Run: role_visualization.py
+------------------------------------------
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 role_visualization.py
+[INFO] Role-based visualizations generated:
+ - role_risk_heatmap.png
+ - priority_distribution.png
+ - action_timeline.png
+
+toor@ip-172-31-10-186:~/risk_management_lab$ ls *.png
+role_risk_heatmap.png
+priority_distribution.png
+action_timeline.png
+
+=========================================
+Task 3: Build Risk Management Reports
+=========================================
+
+------------------------------------------
+Run: risk_report_generator.py
+------------------------------------------
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 risk_report_generator.py
+=== Generating Risk Management Report ===
+[INFO] JSON report saved: risk_management_report.json
+[INFO] Markdown report saved: risk_report.md
+[INFO] Report generation complete.
+[INFO] Generated:
+ - risk_management_report.json
+ - risk_report.md
+
+=========================================
+Step 4: Review and Validate Results
+=========================================
+
+toor@ip-172-31-10-186:~/risk_management_lab$ ls -lh *.csv *.json *.png *.md
+-rw-r--r-- risk_alignment_matrix.csv
+-rw-r--r-- risk_framework_data.json
+-rw-r--r-- role_based_risk_assessment.csv
+-rw-r--r-- prioritized_action_plan.json
+-rw-r--r-- risk_management_report.json
+-rw-r--r-- risk_report.md
+-rw-r--r-- risk_heatmap.png
+-rw-r--r-- alignment_distribution.png
+-rw-r--r-- culture_impact_chart.png
+-rw-r--r-- role_risk_heatmap.png
+-rw-r--r-- priority_distribution.png
+-rw-r--r-- action_timeline.png
+
+toor@ip-172-31-10-186:~/risk_management_lab$ cat risk_report.md | head -30
+# Risk Management Report
+
+Generated: 2026-02-19T22:14:11.229112
+
+## Executive Summary
+- Total risks assessed: 20
+- Critical priorities: 6
+- High priorities: 9
+
+Top Risk Areas (Top 3):
+- insider_threats
+- social_engineering
+- phishing
+
+Most Vulnerable Roles (Top 3):
+- it_admin
+- executive
+- finance
+
+toor@ip-172-31-10-186:~/risk_management_lab$ python3 -c "import pandas as pd; df = pd.read_csv('role_based_risk_assessment.csv'); print(df.describe())"
+       risk_score
+count   20.000000
+mean     6.420000
+std      1.745321
+min      3.250000
+25%      5.325000
+50%      6.850000
+75%      7.925000
+max     10.000000
