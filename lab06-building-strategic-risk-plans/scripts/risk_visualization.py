@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Risk Management Visualization Tools
-Students will complete visualization functions
+I will complete visualization functions
 """
 
 import pandas as pd
