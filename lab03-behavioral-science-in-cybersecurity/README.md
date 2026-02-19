@@ -1,5 +1,5 @@
 # 🧠 Lab 3 — Behavioral Science in Cybersecurity  
-## Applying the B.J. Fogg Behavior Model to Cyber Risk Prioritization
+> Applying the B.J. Fogg Behavior Model to Cyber Risk Prioritization
 
 ---
 
