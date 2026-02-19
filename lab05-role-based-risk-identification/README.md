@@ -48,18 +48,20 @@ lab05-role-based-risk-identification/
 ├── README.md
 ├── commands.sh
 ├── output.txt
-├── risk_env/                       # Python virtual environment (not committed)
-├── organizational_roles.json        # Role data
-├── cti_data.json                   # CTI threat data
-├── role_risk_analyzer.py           # Core risk scoring engine
-├── run_analysis.py                 # Main workflow runner + charts + reports
-├── advanced_classifier.py          # Advanced classification + risk factors + recommendations
-├── filter_high_risk_roles.py       # Filter roles above a threshold
-├── comprehensive_risk_report.json  # Generated report (example artifact)
-├── detailed_risk_report.txt        # Generated role-by-role report
-├── advanced_risk_classification.json
-├── classification_summary.txt
-└── risk_analysis_charts.png        # Visualization output
+├── scripts/
+│   ├── risk_env/                       # Python virtual environment (not committed)
+│   ├── organizational_roles.json       # Role data
+│   ├── cti_data.json                   # CTI threat data
+│   ├── role_risk_analyzer.py           # Core risk scoring engine
+│   ├── run_analysis.py                 # Main workflow runner + charts + reports
+│   ├── advanced_classifier.py          # Advanced classification + risk factors + recommendations
+│   ├── filter_high_risk_roles.py       # Filter roles above a threshold
+├── reports/      
+│   ├── comprehensive_risk_report.json  # Generated report (example artifact)
+│   ├── detailed_risk_report.txt        # Generated role-by-role report
+│   ├── advanced_risk_classification.json
+│   ├── classification_summary.txt
+│   └── risk_analysis_charts.png        # Visualization output
 ```
 
 ---
