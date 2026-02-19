@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Strategic Risk Management Framework
-Students will complete this module to align risks, behaviors, and culture
+I will complete this module to align risks, behaviors, and culture
 """
 
 import json
