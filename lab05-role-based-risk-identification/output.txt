@@ -1,0 +1,190 @@
+toor@ip-172-31-10-244:~$ cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.1 LTS (Noble Numbat)"
+
+toor@ip-172-31-10-244:~$ python3 --version
+Python 3.12.3
+
+toor@ip-172-31-10-244:~$ mkdir -p ~/role_risk_lab
+
+toor@ip-172-31-10-244:~$ cd ~/role_risk_lab
+
+toor@ip-172-31-10-244:~/role_risk_lab$ python3 -m venv risk_env
+
+toor@ip-172-31-10-244:~/role_risk_lab$ source risk_env/bin/activate
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ pip install pandas numpy matplotlib
+Collecting pandas
+Collecting numpy
+Collecting matplotlib
+Installing collected packages: numpy, pandas, matplotlib
+Successfully installed matplotlib-3.9.0 numpy-1.26.4 pandas-2.2.2
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 -c "import pandas, numpy, matplotlib; print('Dependencies OK')"
+Dependencies OK
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano organizational_roles.json
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 -m json.tool organizational_roles.json > /dev/null
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano cti_data.json
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 -m json.tool cti_data.json > /dev/null
+✔ CTI JSON valid
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano role_risk_analyzer.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano run_analysis.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ chmod +x role_risk_analyzer.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ chmod +x run_analysis.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 run_analysis.py
+Starting Role-Based Risk Analysis
+========================================
+[INFO] Loaded organizational roles: 5 roles
+[INFO] Loaded CTI data categories: 3 categories
+
+[INFO] Starting role-based risk analysis...
+[INFO] Risk analysis complete. Roles analyzed: 5
+
+Top Risk Roles
+======================================================================
+Rank  Role Name                     Department          Score   Level     
+----------------------------------------------------------------------
+1     Chief Executive Officer       Executive           100.0   CRITICAL  
+2     IT Administrator              IT                  100.0   CRITICAL  
+3     HR Manager                    Human Resources     84.0    CRITICAL  
+4     Sales Representative          Sales               58.0    MEDIUM    
+5     Customer Support Agent        Customer Service    52.0    MEDIUM    
+----------------------------------------------------------------------
+
+[INFO] Risk report saved to comprehensive_risk_report.json
+[INFO] Detailed text report generated: detailed_risk_report.txt
+[INFO] Visualization saved: risk_analysis_charts.png
+
+[INFO] Analysis completed successfully.
+[INFO] Generated files:
+ - comprehensive_risk_report.json
+ - detailed_risk_report.txt
+ - risk_analysis_charts.png
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ ls -lh
+total 96K
+-rw-r--r-- 1 toor toor 7.8K organizational_roles.json
+-rw-r--r-- 1 toor toor 3.2K cti_data.json
+-rw-r--r-- 1 toor toor 12K comprehensive_risk_report.json
+-rw-r--r-- 1 toor toor 4.5K detailed_risk_report.txt
+-rw-r--r-- 1 toor toor 65K risk_analysis_charts.png
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano advanced_classifier.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ chmod +x advanced_classifier.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 advanced_classifier.py
+Advanced Role-Based Risk Classification
+=============================================
+[INFO] Advanced classification saved: advanced_risk_classification.json
+[INFO] Summary report saved: classification_summary.txt
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ cat advanced_risk_classification.json | python3 -m json.tool | head -50
+{
+    "role_001": {
+        "role_name": "Chief Executive Officer",
+        "role_type": "executive",
+        "department": "Executive",
+        "risk_score": 100.0,
+        "risk_level": "CRITICAL",
+        "risk_factors": [
+            "High system access privileges",
+            "Access to sensitive data",
+            "High external exposure",
+            "Administrative privileges",
+            "High-value target (executive role)"
+        ],
+        "recommendations": [
+            "Enforce MFA on all accounts and privileged actions.",
+            "Enable enhanced monitoring and alerting for this role.",
+            "Perform frequent access reviews and least-privilege enforcement.",
+            "Provide targeted social engineering and phishing resistance training.",
+            "Implement privileged access monitoring and session recording.",
+            "Ensure strong password policy and periodic security awareness refreshers."
+        ]
+    }
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ cat classification_summary.txt
+ADVANCED RISK CLASSIFICATION SUMMARY
+==================================================
+
+Generated: 2026-02-19T21:15:33.882114
+Total Roles: 5
+Average Score: 78.2
+Min Score: 54.6
+Max Score: 100.0
+
+Risk Level Distribution:
+- CRITICAL: 3
+- MEDIUM: 2
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 -m json.tool comprehensive_risk_report.json | head -40
+{
+    "generated_at": "2026-02-19T21:05:21.112334",
+    "summary": {
+        "total_roles": 5,
+        "average_score": 78.0,
+        "min_score": 52.0,
+        "max_score": 100.0,
+        "risk_level_distribution": {
+            "CRITICAL": 3,
+            "MEDIUM": 2
+        }
+    },
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ less detailed_risk_report.txt
+(Reviewed full role-by-role breakdown.)
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ nano filter_high_risk_roles.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ chmod +x filter_high_risk_roles.py
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 filter_high_risk_roles.py
+
+High-Risk Roles (final_score >= 60)
+======================================================================
+Rank  Role Name                     Department          Score   Level     
+----------------------------------------------------------------------
+1     Chief Executive Officer       Executive           100.00  CRITICAL  
+2     IT Administrator              IT                  100.00  CRITICAL  
+3     HR Manager                    Human Resources     84.00   CRITICAL  
+----------------------------------------------------------------------
+Total high-risk roles found: 3
+
+(risk_env) toor@ip-172-31-10-244:~/role_risk_lab$ python3 -c "
+import json
+with open('comprehensive_risk_report.json', 'r') as f:
+ data = json.load(f)
+
+critical = [(k, v) for k, v in data['detailed_analysis'].items()
+ if v['risk_level'] == 'CRITICAL']
+
+print('CRITICAL PRIORITY ROLES:')
+for role_id, info in sorted(critical, key=lambda x: x[1]['final_score'], reverse=True):
+ print(f\"- {info['role_name']}: {info['final_score']} ({info['department']})\")
+"
+CRITICAL PRIORITY ROLES:
+- Chief Executive Officer: 100.0 (Executive)
+- IT Administrator: 100.0 (IT)
+- HR Manager: 84.0 (Human Resources)
+
+✔ Risk engine working
+✔ CTI modifiers applied
+✔ Reports generated
+✔ Advanced classification complete
+✔ Risk factors identified
+✔ Recommendations generated
+✔ High-risk role filtering implemented
+✔ Priority mitigation list generated
