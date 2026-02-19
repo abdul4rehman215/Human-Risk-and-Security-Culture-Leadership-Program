@@ -1,4 +1,4 @@
-# Troubleshooting Guide — Lab 1: Introduction to Human Risk Assessment
+# 🛠️ Troubleshooting Guide — Lab 1: Introduction to Human Risk Assessment
 
 ## Issue 1: Database Permission Denied
 
