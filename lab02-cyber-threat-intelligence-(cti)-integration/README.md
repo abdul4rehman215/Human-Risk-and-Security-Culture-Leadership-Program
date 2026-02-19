@@ -16,7 +16,7 @@ By the end of this lab, I was able to:
 
 ---
 
-✅ Prerequisites
+## ✅ Prerequisites
 
 - Basic understanding of cybersecurity concepts and common threats
 - Familiarity with Linux command line operations
