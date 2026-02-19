@@ -1,209 +1,198 @@
-# 🧠 Lab 3 — Behavioral Science in Cybersecurity  
-> Applying the B.J. Fogg Behavior Model to Cyber Risk Prioritization
+# 🧠 Lab 03: Behavioral Science in Cybersecurity (B.J. Fogg Model)
 
----
+## 📌 Lab Summary
+This lab applies **behavioral science** to cybersecurity by implementing the **B.J. Fogg Behavior Model**:
 
-## 📌 Lab Overview
+> **B = MAT** → Behavior occurs when **Motivation**, **Ability**, and **Trigger** converge.
 
-This lab explores how behavioral science principles — specifically the **B.J. Fogg Behavior Model (B = MAT)** — can enhance traditional cybersecurity risk assessment.
-
-Instead of relying only on:
-
-Impact × Likelihood
-
-We enhance risk evaluation using:
-
-Impact × Frequency × Behavioral Risk Factor
-
-Where Behavioral Risk Factor is derived from:
-
-- Motivation (M)
-- Ability (A)
-- Trigger (T)
-
-This lab demonstrates how human behavioral components directly influence cybersecurity posture and risk prioritization.
+Using Python, we built:
+- A behavior scoring engine for cybersecurity behaviors
+- A risk prioritization system that blends **traditional risk** with **behavioral risk**
+- A full testing suite (unit + integration)
+- An organizational assessment tool that generates actionable recommendations and exports reports
 
 ---
 
 ## 🎯 Objectives
-
-By completing this lab, I was able to:
-
-- Implement the **B.J. Fogg Behavior Model** in Python
-- Calculate behavioral likelihood scores (0–100 scale)
-- Classify behavioral risk levels (Low / Medium / High)
-- Develop a **risk prioritization algorithm** integrating behavioral factors
-- Build a comprehensive **unit + integration testing suite**
-- Design a full **organizational behavioral assessment tool**
-- Generate structured JSON risk reports
-- Apply behavioral science to real-world security culture analysis
+By the end of this lab, I was able to:
+- Apply the **Fogg Model (Motivation, Ability, Trigger)** to cybersecurity contexts
+- Implement behavioral assessment algorithms in Python
+- Develop risk prioritization systems incorporating behavioral principles
+- Analyze security behaviors and generate actionable recommendations
+- Create tools that support improving organizational security culture
 
 ---
 
-# ✅ Prerequisites
-
-• Basic Python programming (functions, classes, dictionaries, lists)
-• Understanding of Linux command line operations
-• Familiarity with cybersecurity concepts (threats, vulnerabilities, risk)
-• Basic knowledge of human behavior and motivation concepts
-
----
-
-## 🖥️ Lab Environment
-
-Environment used:
-
-- Ubuntu 24.04 (Cloud Lab)
-- Python 3.12.3
-- Linux Kernel 6.8.x
-
-Verification:
-
-```bash
-python3 --version
-uname -a
-```
+## ✅ Prerequisites
+- Basic Python programming (functions, classes, dictionaries, lists)
+- Linux command-line familiarity
+- Cybersecurity fundamentals (threats, vulnerabilities, risk)
+- Basic knowledge of motivation/behavior concepts
 
 ---
 
-## 🧠 Understanding the B.J. Fogg Model
-
-The Fogg Behavior Model states:
-
-> **Behavior occurs when Motivation, Ability, and Trigger converge.**
-
-Formula implemented:
-
-```
-B = M × A × T
-```
-
-Where:
-- Motivation (0–10)
-- Ability (0–10)
-- Trigger (0–10)
-
-Normalized to 0–1 scale before multiplication, then converted to 0–100.
+## 🧪 Lab Environment
+| Component | Details |
+|---|---|
+| OS | Ubuntu 24.04 (Cloud Lab) |
+| Kernel | Linux 6.8.0-31-generic x86_64 |
+| Python | Python 3.12.3 |
+| User | `toor` |
 
 ---
 
-## 📂 Repository Structure
-
-```
+## 🗂️ Repository Structure
+```text
 lab03-behavioral-science-in-cybersecurity/
-│
 ├── README.md
 ├── commands.sh
 ├── output.txt
 ├── interview_qna.md
 ├── troubleshooting.md
-│
-└── scripts/
-    ├── fogg_model.py
-    ├── risk_prioritization.py
-    ├── test_system.py
-    └── org_assessment.py
-```
+├── scripts/
+│   ├── fogg_model.py
+│   ├── risk_prioritization.py
+│   ├── test_system.py
+│   └── org_assessment.py
+└── reports/
+    ├── fogg_export_test.json
+    ├── prioritized_export_test.json
+    ├── integration_prioritized_risks.json
+    └── org_risk_report.json
+````
 
 ---
 
-## 🧪 Tasks Completed
+## 🧩 What Was Built
 
-### ✅ Task 1 — Fogg Behavior Model Implementation
-- Created reusable Python class
-- Behavior scoring logic
-- Risk classification
-- Recommendation engine
-- Trend analysis
-- JSON export capability
+### 1) 🧠 Fogg Behavior Model Engine (`fogg_model.py`)
 
-### ✅ Task 2 — Risk Prioritization Algorithm
-- Combined:
-  - Impact score
-  - Threat frequency
-  - Behavioral inverse score
-- Sorted risk scenarios by calculated priority
-- Generated structured text report
+Implemented:
 
-### ✅ Task 3 — Comprehensive Test Suite
-- Unit testing for:
-  - Behavior scoring
-  - Risk prioritization
-  - Data export
-- Integration testing
-- Validation of JSON output
-- PASS/FAIL result reporting
+* Behavior score calculation using:
+  **(Motivation × Ability × Trigger) × 100**
+* Risk levels based on behavior likelihood:
 
-### ✅ Task 4 — Organizational Assessment Tool
-- Department-based profiling:
-  - HR
-  - Marketing
-  - Finance
-  - IT
-  - Executives
-- Realistic behavioral scoring
-- Risk adjustment for high-value targets
-- Generated:
-  - Structured text report
-  - JSON export file
+  * **High likelihood → Low risk**
+  * **Medium likelihood → Medium risk**
+  * **Low likelihood → High risk**
+* Automated recommendations based on weak components (M/A/T)
+* Trend analysis and JSON export
 
 ---
 
-## 📊 Key Behavioral Insights Identified
+### 2) ⚖️ Behavioral Risk Prioritization (`risk_prioritization.py`)
 
-- Low ability often drives high risk more than low motivation
-- Executives and Finance departments require stronger triggers
-- Technical teams often need motivational reinforcement
-- Behavioral risk can drastically change traditional priority scores
+Implemented a scoring system that combines:
 
----
+* **Business Impact (1–10)**
+* **Threat Frequency (1–10)**
+* **Behavioral Risk Factor** (inverse of behavior score)
 
-## 🏆 Expected Outcomes Achieved
+Formula used:
 
-✔ Functional Fogg Model implementation  
-✔ Risk prioritization with behavioral weighting  
-✔ Fully passing unit + integration tests  
-✔ Organizational assessment engine  
-✔ Valid JSON exports  
-✔ Actionable security recommendations  
+* **Priority = (Impact × Frequency × Behavioral_Risk_Factor) / 100**
+* Where **Behavioral_Risk_Factor = 100 − avg_behavior_score**
 
----
+Output:
 
-## 🌍 Real-World Applications
-
-This behavioral risk framework can be used for:
-
-- Security awareness program design
-- Risk-based security investment decisions
-- Targeted phishing simulations
-- Department-level intervention strategies
-- Security culture measurement
-- Executive-level reporting
-- Compliance and policy effectiveness analysis
+* Priority levels (Critical / High / Medium / Low)
+* Recommendations automatically tailored to weak behavioral components + impact/frequency
 
 ---
 
-## 📌 Conclusion
+### 3) ✅ Comprehensive Testing Suite (`test_system.py`)
 
-This lab bridges behavioral psychology with cybersecurity risk management.
+Built:
 
-Traditional risk model:
+* Unit tests for Fogg scoring correctness + clamping validation
+* Unit tests for prioritization sorting + top-risk correctness
+* Export validation tests (JSON file creation + content checks)
+* Integration test using a realistic multi-department scenario
 
-Impact × Likelihood
+Final test outcome:
 
-Enhanced behavioral model:
-
-Impact × Frequency × (100 − Behavior Score)
-
-By integrating Motivation, Ability, and Triggers, organizations can:
-
-- Identify weakest security components
-- Design targeted interventions
-- Improve organizational security culture
-- Allocate security resources intelligently
-
-This approach transforms cybersecurity from purely technical control management into a human-centered strategic discipline.
+* **Overall Result: PASS**
 
 ---
 
-🔐 Lab Completed Successfully  
+### 4) 🏢 Organizational Assessment Tool (`org_assessment.py`)
+
+Built a tool that:
+
+* Defines department profiles (HR, Marketing, Finance, IT, Executives)
+* Assesses behavioral posture by department
+* Prioritizes common risks across departments
+* Generates actionable recommendations (department + risk level)
+* Exports full results to:
+
+  * `reports/org_risk_report.json`
+
+---
+
+## 📊 Key Outcomes (What the Lab Demonstrated)
+
+* Behavioral factors can dramatically change risk priority outcomes
+* **Low ability** is frequently the biggest blocker, even when motivation is high
+* Strong triggers (nudges, banners, simulations, reminders) can compensate for moderate motivation
+* High-value targets (Executives/Finance) need **special handling**:
+
+  * stronger controls
+  * stronger triggers
+  * targeted training and monitoring
+
+---
+
+## ✅ Result
+
+By completing this lab, I successfully:
+
+* Built a functional behavioral security scoring engine
+* Prioritized cybersecurity risks using behavioral factors
+* Validated correctness using unit + integration tests
+* Generated organization-level risk reports and recommendations
+* Exported structured JSON data for downstream security analytics
+
+---
+
+## 🌍 Why This Matters
+
+Most security failures are not purely technical — they happen because people:
+
+* forget (weak triggers)
+* don’t know how (low ability)
+* don’t feel urgency (low motivation)
+
+Behavioral-driven security design improves:
+
+* awareness program effectiveness
+* policy adoption
+* real-world behavior change
+* risk-based resource allocation
+
+---
+
+## 🧰 Real-World Applications
+
+* Security awareness program design (behavior-based interventions)
+* Risk-based training prioritization (target weakest M/A/T)
+* Department-level culture benchmarking
+* Executive/VIP spear-phishing readiness programs
+* Measuring policy effectiveness and adoption behavior
+* Human risk analytics for compliance and governance
+
+---
+
+## 🏁 Conclusion
+
+This lab demonstrated how **behavioral science** (B.J. Fogg Model) strengthens cybersecurity strategy by bridging the gap between technical controls and human behavior.
+
+Traditional risk models focus on:
+
+* **Impact × Likelihood**
+
+This lab enhanced that with a human factor:
+
+* **Impact × Frequency × Behavioral Risk Factor**
+
+By measuring **Motivation, Ability, and Triggers**, we can identify the weakest component and design targeted interventions that drive real security behavior change.
