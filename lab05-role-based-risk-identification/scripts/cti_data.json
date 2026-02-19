@@ -1,0 +1,32 @@
+{
+  "phishing_attacks": [
+    {
+      "threat_id": "PHI_001",
+      "name": "Executive Spear Phishing",
+      "target_roles": ["executive", "management"],
+      "severity": 4
+    },
+    {
+      "threat_id": "PHI_002",
+      "name": "IT Credential Harvesting",
+      "target_roles": ["technical"],
+      "severity": 5
+    }
+  ],
+  "social_engineering": [
+    {
+      "threat_id": "SE_001",
+      "name": "Customer Service Impersonation",
+      "target_roles": ["support", "sales"],
+      "severity": 3
+    }
+  ],
+  "insider_threats": [
+    {
+      "threat_id": "IN_001",
+      "name": "Privileged User Abuse",
+      "target_roles": ["technical", "executive"],
+      "severity": 5
+    }
+  ]
+}
