@@ -48,7 +48,7 @@ lab06-building-strategic-risk-plans/
 │   ├── risk_visualization.py
 │   ├── role_risk_assessment.py
 │   ├── role_visualization.py
-│   ├── risk_report_generator.py
+│   └── risk_report_generator.py
 │
 ├── reports/
 │   risk_alignment_matrix.csv
@@ -57,7 +57,7 @@ lab06-building-strategic-risk-plans/
 │   ├── role_based_risk_assessment.csv
 │   ├── prioritized_action_plan.json
 │   ├── risk_management_report.json
-│   ├── risk_report.md
+│   └── risk_report.md
 │
 ├── visual_reports/
 │   ├── risk_heatmap.png
