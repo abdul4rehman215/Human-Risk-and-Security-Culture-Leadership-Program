@@ -1,0 +1,232 @@
+============================================================
+Lab 3: Behavioral Science in Cybersecurity
+Environment: Ubuntu 24.04
+User: toor
+============================================================
+
+$ python3 --version
+Python 3.12.3
+
+$ uname -a
+Linux ip-172-31-10-231 6.8.0-31-generic #31-Ubuntu SMP x86_64 GNU/Linux
+
+------------------------------------------------------------
+Project Setup
+------------------------------------------------------------
+
+$ mkdir -p ~/fogg_cybersecurity_lab
+$ cd ~/fogg_cybersecurity_lab
+$ pwd
+/home/toor/fogg_cybersecurity_lab
+
+------------------------------------------------------------
+Task 1: Fogg Model Test
+------------------------------------------------------------
+
+$ ls -lh
+total 12K
+-rwxr-xr-x 1 toor toor 8.5K Feb 19 18:12 fogg_model.py
+
+$ python3 fogg_model.py
+
+Test 1 - Behavior Score: 22.4
+Likelihood: Low, Risk: High
+Recommendations: 3 items
+
+Test 2 - Behavior Score: 21.6
+Likelihood: Low, Risk: High
+
+Trends: {
+'total_assessments': 2,
+'averages': {
+    'motivation': 8.0,
+    'ability': 6.0,
+    'trigger': 5.5,
+    'behavior_score': 22.0
+},
+'risk_distribution': {'High': 2, 'Medium': 0, 'Low': 0}
+}
+
+✔ Behavior scores calculated correctly
+✔ Risk levels assigned correctly
+✔ Recommendations generated based on weak components
+
+------------------------------------------------------------
+Task 2: Risk Prioritization
+------------------------------------------------------------
+
+$ ls -lh
+total 24K
+-rwxr-xr-x 1 toor toor 8.5K Feb 19 18:12 fogg_model.py
+-rw-r--r-- 1 toor toor 14K Feb 19 18:25 risk_prioritization.py
+
+$ python3 risk_prioritization.py
+
+Top Priority Risks:
+- Phishing Email Attacks: 63.36 (High)
+- Unauthorized Software Installation: 3.58 (Low)
+
+CYBERSECURITY RISK PRIORITIZATION REPORT
+=============================================
+
+Executive Summary
+------------------
+Total Risks Assessed: 2
+Critical Risks: 0
+High Risks: 1
+Medium Risks: 0
+Low Risks: 1
+
+Risk ID: RISK-001
+Risk Name: Phishing Email Attacks
+Priority Level: High
+Priority Score: 63.36
+Impact Score: 8.5
+Threat Frequency: 9.0
+Affected Users: 2
+Recommendations:
+ - Increase motivation: run targeted awareness campaigns and leadership messaging for this risk.
+ - Increase ability: provide hands-on training, clear SOPs, and simplify security tools/workflows.
+ - Increase triggers: enable reminders, banners, simulations, and just-in-time prompts for users.
+ - High impact detected: apply stronger controls, monitoring, and escalation procedures.
+ - High frequency detected: prioritize continuous controls and frequent user testing/simulations.
+---------------------------------------------
+Risk ID: RISK-002
+Risk Name: Unauthorized Software Installation
+Priority Level: Low
+Priority Score: 3.58
+Impact Score: 6.5
+Threat Frequency: 5.0
+Affected Users: 2
+Recommendations:
+ - Maintain current controls and perform periodic reassessment to ensure risk stays controlled.
+---------------------------------------------
+
+✔ Higher priority assigned to weak-behavior users
+✔ Sorting works correctly
+✔ Recommendations generated
+
+------------------------------------------------------------
+Task 3: Comprehensive Test Suite
+------------------------------------------------------------
+
+$ python3 test_system.py
+
+=== Testing Fogg Model ===
+
+[PASS] All zeros: behavior_score expected 0.0, got 0.0
+[PASS] All zeros: likelihood expected Low, got Low
+[PASS] All zeros: risk_level expected High, got High
+[PASS] All zeros: recommendations generated for weak component(s)
+[PASS] All tens: behavior_score expected 100.0, got 100.0
+[PASS] Mixed mid: behavior_score expected 12.5, got 12.5
+[PASS] Trends: total_assessments matches number of test cases
+
+=== Fogg Model Tests Complete ===
+
+=== Testing Risk Prioritization ===
+
+[PASS] 3 risks prioritized
+[PASS] Risks sorted by priority_score descending
+[PASS] Each risk has a priority_level
+[PASS] Top prioritized risk is Credential Phishing
+[PASS] Recommendations generated for all risks
+
+=== Risk Prioritization Tests Complete ===
+
+=== Testing Data Export ===
+
+[PASS] Fogg model export_data returns True
+[PASS] Fogg export file created
+[PASS] Fogg export JSON content valid
+[PASS] Prioritizer export_prioritized_risks returns True
+[PASS] Prioritized risks export file created
+[PASS] Prioritized risks JSON content valid
+
+=== Data Export Tests Complete ===
+
+=== Integration Test ===
+
+[PASS] Integration: risks prioritized
+[PASS] Integration: report generated with header
+[PASS] Integration: export prioritized risks succeeded
+[PASS] Integration: exported file exists
+
+=== Integration Test Complete ===
+
+=== All Tests Complete ===
+Overall Result: PASS
+
+✔ All unit tests passed
+✔ Integration workflow successful
+
+------------------------------------------------------------
+Task 4: Organizational Assessment
+------------------------------------------------------------
+
+$ python3 org_assessment.py
+
+ORGANIZATIONAL SECURITY BEHAVIOR & RISK ASSESSMENT REPORT
+============================================================
+Generated at: 2026-02-19T18:42:31.284920
+
+SECTION 1: Department Behavioral Risk Summary
+------------------------------------------------------------
+Department: HR
+  Behavioral Risk: High
+  Avg Motivation: 6.5
+  Avg Ability: 4.0
+  Avg Trigger: 4.5
+  Avg Behavior Score: 11.7
+
+Department: Marketing
+  Behavioral Risk: High
+  Avg Motivation: 5.5
+  Avg Ability: 4.5
+  Avg Trigger: 4.0
+  Avg Behavior Score: 9.9
+
+Department: Finance
+  Behavioral Risk: Medium
+  Avg Motivation: 6.5
+  Avg Ability: 5.0
+  Avg Trigger: 4.5
+  Avg Behavior Score: 14.6
+
+Department: IT
+  Behavioral Risk: Medium
+  Avg Motivation: 5.5
+  Avg Ability: 8.5
+  Avg Trigger: 4.5
+  Avg Behavior Score: 21.0
+
+Department: Executives
+  Behavioral Risk: High
+  Avg Motivation: 5.5
+  Avg Ability: 3.0
+  Avg Trigger: 2.5
+  Avg Behavior Score: 4.13
+
+Top prioritized risks example:
+1. Business Email Compromise (Executives)
+   Priority Level: Critical | Priority Score: 76.54
+2. Phishing / Credential Harvesting (Finance)
+   Priority Level: High | Priority Score: 68.11
+3. Phishing / Credential Harvesting (Executives)
+   Priority Level: High | Priority Score: 66.92
+
+JSON report exported successfully: org_risk_report.json
+
+$ ls -lh org_risk_report.json
+-rw-r--r-- 1 toor toor 28K Feb 19 18:42 org_risk_report.json
+
+$ python3 -m json.tool org_risk_report.json > /dev/null && echo "JSON valid"
+JSON valid
+
+✔ Organizational assessment generated successfully
+✔ JSON export validated
+✔ Behavioral risk differences clearly identified
+
+============================================================
+Lab 3 Completed Successfully
+============================================================
