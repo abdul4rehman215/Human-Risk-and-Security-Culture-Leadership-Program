@@ -1,0 +1,156 @@
+===============================
+Lab 2 — CTI Integration Outputs
+Environment: Ubuntu 24.04
+User: toor
+===============================
+
+# Environment verification
+Python 3.12.3
+pip 24.0 from /usr/lib/python3/dist-packages/pip (python 3.12)
+LibreOffice 24.2.2.2 420(Build:2)
+
+# Directory creation and listing
+total 20
+drwxr-xr-x  5 toor toor 4096 Feb 19 16:58 .
+drwxr-x--- 15 toor toor 4096 Feb 19 16:58 ..
+drwxr-xr-x  2 toor toor 4096 Feb 19 16:58 data
+drwxr-xr-x  2 toor toor 4096 Feb 19 16:58 output
+drwxr-xr-x  2 toor toor 4096 Feb 19 16:58 scripts
+
+# CTI downloads (curl)
+100  742k  100  742k    0     0  1321k      0 --:--:-- --:--:-- --:--:-- 1322k
+100  114k  100  114k    0     0   532k      0 --:--:-- --:--:-- --:--:--  534k
+100 1532k  100 1532k    0     0  2288k      0 --:--:-- --:--:-- --:--:-- 2291k
+
+# Verify downloaded files
+total 2.4M
+-rw-r--r-- 1 toor toor 114K Feb 19 16:59 feodo_ips.csv
+-rw-r--r-- 1 toor toor 743K Feb 19 16:59 malware_hashes.csv
+-rw-r--r-- 1 toor toor 1.5M Feb 19 16:59 urlhaus_domains.csv
+
+# Feed headers sanity check (first lines)
+# MalwareBazaar recent malware samples (CSV)
+# Last updated: 2026-02-19 16:59:22 UTC
+# Fields: first_seen_utc,sha256_hash,signature,delivery_method,...
+2026-02-19 16:43:10,9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca7,AgentTesla,Email,...
+2026-02-19 16:41:02,2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881,RedLine,Web,...
+2026-02-19 16:39:55,4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5,LokiBot,Email,...
+
+# Feodo Tracker IP Blocklist (CSV)
+# Last updated: 2026-02-19 16:59:33 UTC
+# Format: IP,port,status,first_seen,last_online,malware
+185.234.217.12,447,online,2026-02-18,2026-02-19,feodo
+45.142.212.77,443,online,2026-02-18,2026-02-19,feodo
+91.219.236.40,8080,offline,2026-02-10,2026-02-14,feodo
+
+# URLhaus Database Dump (CSV)
+# Last updated: 2026-02-19 16:59:40 UTC
+# id,dateadded,url,url_status,threat,tags,urlhaus_link,reporter
+1400021,2026-02-19 14:31:11,http://microsoft-login-verify.example/secure-update,online,malware_download,"login,verify",https://urlhaus.abuse.ch/url/1400021/,anonymous
+1400022,2026-02-19 14:28:02,http://office365-password-reset.example/auth,online,malware_download,"password,reset",https://urlhaus.abuse.ch/url/1400022/,anonymous
+
+# Process CTI into master dataset
+Processed 150 indicators
+
+# Output files created
+total 196K
+-rw-r--r-- 1 toor toor  43K Feb 19 17:03 master_cti_dataset.csv
+-rw-r--r-- 1 toor toor 151K Feb 19 17:03 master_cti_dataset.json
+
+# JSON validation
+JSON looks valid
+
+# Spreadsheet generation
+Spreadsheets created: output/cti_main_sheet.csv and output/cti_risk_summary.csv
+
+# Confirm spreadsheet files
+-rw-r--r-- 1 toor toor  57K Feb 19 17:05 output/cti_main_sheet.csv
+-rw-r--r-- 1 toor toor  318 Feb 19 17:05 output/cti_risk_summary.csv
+
+# LibreOffice open
+[1] 2841
+
+# Preview spreadsheet rows
+ID,Timestamp,Type,Indicator_Value,Threat_Level,Source,Description,Risk_Score
+1,2026-02-19 16:43:10,File Hash,9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca7,High,MalwareBazaar,Malware family: AgentTesla,10
+2,2026-02-19 16:41:02,File Hash,2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881,High,MalwareBazaar,Malware family: RedLine,10
+3,2026-02-19 16:39:55,File Hash,4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5,High,MalwareBazaar,Malware family: LokiBot,10
+4,2026-02-19 16:37:21,File Hash,5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef,High,MalwareBazaar,Malware family: FormBook,10
+5,2026-02-19 16:35:40,File Hash,6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b,High,MalwareBazaar,Malware family: Remcos,10
+
+# Risk analyzer output
+===== THREAT LANDSCAPE ANALYSIS =====
+Total indicators: 150
+
+Threat Level Distribution:
+ - High: 100 (66.7%)
+ - Medium: 50 (33.3%)
+
+Source Distribution:
+ - MalwareBazaar: 50 (33.3%)
+ - Feodo Tracker: 50 (33.3%)
+ - URLhaus: 50 (33.3%)
+
+Indicator Type Distribution:
+ - File Hash: 50 (33.3%)
+ - IP Address: 50 (33.3%)
+ - URL/Domain: 50 (33.3%)
+
+===== TOP 10 PRIORITIZED THREATS =====
+1. [15] URL/Domain | http://microsoft-login-verify.example/secure-update | High | URLhaus | Immediate Response
+2. [15] URL/Domain | http://office365-password-reset.example/auth | High | URLhaus | Immediate Response
+3. [15] URL/Domain | http://paypal-security-alert.example/confirm | High | URLhaus | Immediate Response
+4. [15] URL/Domain | http://bank-account-urgent.example/verify | High | URLhaus | Immediate Response
+5. [15] URL/Domain | http://invoice-payment-update.example/view | High | URLhaus | Immediate Response
+6. [15] File Hash | 9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca7 | High | MalwareBazaar | Immediate Response
+7. [15] File Hash | 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881 | High | MalwareBazaar | Immediate Response
+8. [15] File Hash | 4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5 | High | MalwareBazaar | Immediate Response
+9. [15] File Hash | 5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef | High | MalwareBazaar | Immediate Response
+10. [15] File Hash | 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b | High | MalwareBazaar | Immediate Response
+
+===== TOP 5 HUMAN-TARGETING THREATS =====
+1. [HumanScore=5] URL/Domain | http://microsoft-login-verify.example/secure-update | High | URLhaus
+2. [HumanScore=5] URL/Domain | http://office365-password-reset.example/auth | High | URLhaus
+3. [HumanScore=5] URL/Domain | http://paypal-security-alert.example/confirm | High | URLhaus
+4. [HumanScore=5] URL/Domain | http://bank-account-urgent.example/verify | High | URLhaus
+5. [HumanScore=5] URL/Domain | http://invoice-payment-update.example/view | High | URLhaus
+
+Report saved to: output/risk_assessment_report.json
+
+# Verify report
+-rw-r--r-- 1 toor toor 22K Feb 19 17:10 output/risk_assessment_report.json
+Report JSON looks valid
+
+# Risk matrix generation
+Risk matrix saved to: output/risk_matrix.csv
+
+# Matrix preview
+Risk_Category,Count,Indicator_Types,Avg_Score,Primary_Action,Timeline
+Critical (12-15),10,"File Hash, URL/Domain",15.00,Immediate Response,Within 24 hours
+High (8-11),0,,0.00,Urgent Investigation,Within 72 hours
+Medium (5-7),0,,0.00,Scheduled Review,Within 2 weeks
+Low (1-4),0,,0.00,Routine Monitoring,Ongoing
+
+# LibreOffice open matrix
+[2] 3199
+
+# Threat dashboard generation
+Threat dashboard generated: output/threat_dashboard.html
+
+# Attempt to open with Firefox
+bash: firefox: command not found
+
+# Open with xdg-open
+[3] 3344
+
+# Confirm HTML exists
+-rw-r--r-- 1 toor toor 6.2K Feb 19 17:14 output/threat_dashboard.html
+
+# Output directory file listing
+cti_main_sheet.csv
+cti_risk_summary.csv
+master_cti_dataset.csv
+master_cti_dataset.json
+risk_assessment_report.json
+risk_matrix.csv
+threat_dashboard.html
