@@ -1,4 +1,4 @@
-# Interview Questions & Answers — Lab 2 (CTI Integration)
+# 🎤 Interview Q&A — Lab 2: Cyber Threat Intelligence (CTI) Integration
 
 ## 1) What is CTI (Cyber Threat Intelligence)?
 CTI is threat data + context (IOCs, TTPs, actor behavior) used to improve detection, prevention, and response.
