@@ -1,0 +1,27 @@
+# Key Human Risk Indicators (KRIs)
+
+## Password Security
+- Password complexity compliance rate
+- Password reuse frequency
+- Multi-factor authentication adoption
+- Password manager usage rate
+
+## Email Security
+- Phishing simulation click rates
+- Suspicious email reporting frequency
+- Email attachment scanning compliance
+
+## Social Engineering
+- Social engineering test failure rates
+- Information disclosure incidents
+- Unauthorized access attempts
+
+## Device Security
+- Unpatched software instances
+- Unauthorized software installations
+- Mobile device security compliance
+
+## Training and Awareness
+- Security training completion rates
+- Knowledge retention test scores
+- Policy acknowledgment rates
