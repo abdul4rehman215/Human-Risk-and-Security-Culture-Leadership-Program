@@ -27,6 +27,7 @@ By the end of this lab, I was able to:
 
 ## 📁 Repository Structure
 
+```
 lab14-ambassador-program/
 │
 ├── frameworks/
@@ -60,6 +61,7 @@ lab14-ambassador-program/
 ├── interview_qna.md
 ├── output.txt
 └── troubleshooting.md
+```
 
 ---
 
