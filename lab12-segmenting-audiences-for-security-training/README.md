@@ -62,19 +62,22 @@ lab12-segmenting-audiences-for-security-training/
 ├── interview_qna.md
 ├── troubleshooting.md
 │
-├── employee_data_generator.py
-├── audience_segmentation.py
-├── aida_messaging.py
-├── message_analysis.py
+├── data/
+│   ├── employee_data_generator.py
+│   ├── audience_segmentation.py
+│   ├── aida_messaging.py
+│   └── message_analysis.py
 │
-├── employees.csv
-├── aida_messages.json
-├── messages_for_delivery.csv
-├── training_recommendations.csv
-│
-├── segment_department_*.csv
-├── segment_risk_*.csv
-└── segment_urgency_*.csv
+├── scripts/
+│   ├── employees.csv
+│   ├── aida_messages.json
+│   ├── messages_for_delivery.csv
+│   └── training_recommendations.csv
+│   
+├── reports/
+│   ├── segment_department_*.csv
+│   ├── segment_risk_*.csv
+│   └── segment_urgency_*.csv
 
 ```
 
