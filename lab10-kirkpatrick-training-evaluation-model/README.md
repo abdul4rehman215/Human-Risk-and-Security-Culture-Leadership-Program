@@ -41,11 +41,11 @@ By completing this lab, I was able to:
 
 ## 📌 Prerequisites
 
-• Basic Python programming knowledge
-• Understanding of REST APIs and JSON
-• Familiarity with Linux command line
-• Basic cybersecurity concepts
-• Understanding of web technologies (HTML, CSS)
+- Basic Python programming knowledge
+- Understanding of REST APIs and JSON
+- Familiarity with Linux command line
+- Basic cybersecurity concepts
+- Understanding of web technologies (HTML, CSS)
 
 ---
 
