@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Report Generation Module
-Students: Complete the TODO sections
 """
 
 import matplotlib.pyplot as plt
