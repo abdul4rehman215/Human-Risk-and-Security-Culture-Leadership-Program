@@ -1,32 +1,33 @@
-# Security Ambassador Role Description
+# Cybersecurity Ambassador Program Framework
 
-## Time Commitment
-- 3-5 hours per month for program activities
-- 2 hours quarterly for training sessions
-- Ad-hoc support for department security questions
-
----
-
-## Key Activities
-- Host monthly security awareness sessions
-- Share security tips and updates
-- Assist colleagues with security questions
-- Participate in security campaigns
-- Provide feedback on security initiatives
+## Program Goals
+- Improve organizational security culture
+- Distribute security knowledge across departments
+- Create peer-to-peer security support network
+- Increase security awareness engagement
 
 ---
 
-## Support Provided
-- Comprehensive training program
-- Access to security resources and materials
-- Direct line to security team
-- Recognition in organizational communications
-- Professional development opportunities
+## Ambassador Selection Criteria
+- Security knowledge (minimum intermediate level)
+- Communication skills and willingness to help others
+- Leadership potential and peer respect
+- Time availability (3-5 hours/month minimum)
+- Department representation for broad coverage
 
 ---
 
-## Success Metrics
-- Number of awareness activities conducted
-- Employee reach and engagement
-- Security incident reduction in department
-- Peer feedback and satisfaction scores
+## Program Structure
+- 10-15 ambassadors across key departments
+- Monthly training and coordination meetings
+- Quarterly program reviews and adjustments
+- Recognition and incentive system
+
+---
+
+## Ambassador Responsibilities
+- Conduct monthly security awareness activities
+- Serve as security resource for their department
+- Report security concerns and trends
+- Participate in program development
+- Complete ongoing training requirements
