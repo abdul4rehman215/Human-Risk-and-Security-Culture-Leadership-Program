@@ -1,7 +1,7 @@
 # 🧪 Lab 15: Metrics for Measuring Security Culture
 
 ## 🎯 Objectives
-By the end of this lab, you will be able to:
+By the end of this lab, I was able to:
 - Design and implement a security culture measurement framework
 - Collect and analyze security awareness metrics using Python
 - Create interactive visualizations with D3.js for culture data
@@ -32,6 +32,41 @@ By the end of this lab, you will be able to:
 
 ---
 
+## 📁 Repository Structure
+
+```
+lab15-metrics-for-measuring-security-culture/
+│
+├── scripts/
+│   ├── culture_analyzer.py
+│   ├── dashboard_app.py
+│   ├── data_collector.py
+│   ├── generate_sample_data.py
+│   ├── setup_database.py
+│   └── trend_analyzer.py
+│
+├── static/
+│   ├── css/
+│   │   └── dashboard.css
+│   └── js/
+│       └── dashboard.js
+│
+├── templates/
+│   └── dashboard.html
+│
+├── data/
+│   ├── security_culture.db
+│   ├── culture_report.json
+│   └── trend_report.json
+│
+├── README.md
+├── commands.sh
+├── interview.md
+├── output.txt
+└── troubleshooting.md
+```
+---
+
 ## 🧩 Lab Tasks Overview
 
 ### Task 1: Database Setup and Data Collection Framework
@@ -60,7 +95,7 @@ You generate comprehensive reports, interpret trends, and translate results into
 
 ---
 
-## ✅ Results Summary (High-Level)
+## ✅ Results Summary 
 This lab outputs a working measurement system capable of:
 - Tracking security training effectiveness
 - Measuring phishing simulation resilience (click + report rates)
@@ -80,7 +115,7 @@ This lab mirrors real-world governance approaches where security leaders must:
 
 ---
 
-## 🧠 What You Learned
+## 🧠 What I Learned
 - How to model security culture metrics in a database
 - How to calculate culture indicators from multiple sources
 - How to convert technical metrics into decision-friendly dashboards
