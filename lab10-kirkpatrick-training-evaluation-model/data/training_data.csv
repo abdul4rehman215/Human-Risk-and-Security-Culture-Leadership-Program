@@ -1,0 +1,9 @@
+{
+  "reaction_threshold": 4.0,
+  "learning_improvement_target": 15,
+  "passing_score": 80,
+  "behavior_reduction_target": 0.5,
+  "business_impact_threshold": 8.0,
+  "incident_cost": 10000,
+  "training_cost_per_person": 500
+}
