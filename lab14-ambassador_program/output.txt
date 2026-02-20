@@ -1,0 +1,194 @@
+# Cybersecurity Ambassador Program Framework
+## Program Goals
+- Improve organizational security culture
+- Distribute security knowledge across departments
+- Create peer-to-peer security support network
+- Increase security awareness engagement
+## Ambassador Selection Criteria
+- Security knowledge (minimum intermediate level)
+- Communication skills and willingness to help others
+- Leadership potential and peer respect
+- Time availability (3-5 hours/month minimum)
+- Department representation for broad coverage
+## Program Structure
+- 10-15 ambassadors across key departments
+- Monthly training and coordination meetings
+- Quarterly program reviews and adjustments
+- Recognition and incentive system
+## Ambassador Responsibilities
+- Conduct monthly security awareness activities
+- Serve as security resource for their department
+- Report security concerns and trends
+- Participate in program development
+- Complete ongoing training requirements
+
+
+# Security Ambassador Role Description
+## Time Commitment
+- 3-5 hours per month for program activities
+- 2 hours quarterly for training sessions
+- Ad-hoc support for department security questions
+## Key Activities
+- Host monthly security awareness sessions
+- Share security tips and updates
+- Assist colleagues with security questions
+- Participate in security campaigns
+- Provide feedback on security initiatives
+## Support Provided
+- Comprehensive training program
+- Access to security resources and materials
+- Direct line to security team
+- Recognition in organizational communications
+- Professional development opportunities
+## Success Metrics
+- Number of awareness activities conducted
+- Employee reach and engagement
+- Security incident reduction in department
+- Peer feedback and satisfaction scores
+
+
+0
+
+
+Requirement already satisfied: pip in ./venv/lib/python3.12/site-packages (24.0)
+Collecting pip
+  Downloading pip-25.0.1-py3-none-any.whl (2.1 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-25.0.1
+
+
+Collecting pandas
+Collecting numpy
+Collecting matplotlib
+Collecting python-dateutil>=2.8.2
+Collecting pytz>=2020.1
+Collecting tzdata>=2022.7
+Collecting contourpy>=1.0.1
+Collecting cycler>=0.10
+Collecting fonttools>=4.22.0
+Collecting kiwisolver>=1.3.1
+Collecting packaging>=20.0
+Collecting pillow>=8
+Collecting pyparsing>=2.3.1
+Collecting six>=1.5
+Installing collected packages: pytz, tzdata, six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, contourpy, pandas, matplotlib
+Successfully installed contourpy-1.3.1 cycler-0.12.1 fonttools-4.56.0 kiwisolver-1.4.8 matplotlib-3.9.2 numpy-2.1.3 packaging-24.2 pandas-2.2.3 pillow-11.0.0 pyparsing-3.2.1 python-dateutil-2.9.0.post0 pytz-2025.1 six-1.17.0 tzdata-2025.1
+
+
+Analysis complete. Check output files.
+Generated plots:
+- plots/interest_distribution.png
+- plots/knowledge_by_department.png
+- plots/score_distribution.png
+- plots/time_availability_pie.png
+- plots/interest_vs_score_scatter.png
+Report: analysis_report.txt
+✅ Outputs created:
+• analysis_report.txt
+• plots/*.png
+
+
+-rw-r--r-- 1 toor toor 6.3K Feb 20 11:14 analysis_report.txt
+-rw-r--r-- 1 toor toor  44K Feb 20 11:14 plots/interest_distribution.png
+-rw-r--r-- 1 toor toor  58K Feb 20 11:14 plots/interest_vs_score_scatter.png
+-rw-r--r-- 1 toor toor  52K Feb 20 11:14 plots/knowledge_by_department.png
+-rw-r--r-- 1 toor toor  46K Feb 20 11:14 plots/score_distribution.png
+-rw-r--r-- 1 toor toor  60K Feb 20 11:14 plots/time_availability_pie.png
+
+
+CYBERSECURITY AMBASSADOR PROGRAM - SURVEY ANALYSIS REPORT
+============================================================
+Generated at (UTC): 2026-02-20T11:14:22.019514Z
+
+Total responses analyzed: 100
+Average ambassador score: 3.74 (scale 1-5)
+Average interest rating: 3.61 (scale 1-5)
+Average security knowledge: 3.54 (scale 1-5)
+
+DEPARTMENT INSIGHTS
+------------------------------------------------------------
+department  responses  avg_security_knowledge  avg_interest  avg_presentation  avg_score  avg_help_score
+       IT         16                 3.94         3.88            3.78      3.98           3.85
+   Finance         14                 3.63         3.55            3.52      3.71           3.44
+        HR         13                 3.36         3.42            3.44      3.55           3.38
+Marketing         12                 3.29         3.35            3.31      3.47           3.21
+Operations         18                 3.18         3.40            3.22      3.46           3.33
+     Sales         19                 3.31         3.58            3.40      3.58           3.51
+     Other          8                 3.44         3.36            3.55      3.63           3.20
+
+
+Program tracking complete.
+Dashboard: tracking_charts/program_dashboard.png
+Exports: {'ambassadors_csv': 'exports/ambassadors.csv', 'activities_csv': 'exports/activities.csv', 'metrics_json': 'exports/metrics.json'}
+
+
+-rw-r--r-- 1 toor toor 139K Feb 20 11:18 tracking_charts/program_dashboard.png
+-rw-r--r-- 1 toor toor  568 Feb 20 11:18 exports/ambassadors.csv
+-rw-r--r-- 1 toor toor  474 Feb 20 11:18 exports/activities.csv
+-rw-r--r-- 1 toor toor  486 Feb 20 11:18 exports/metrics.json
+
+
+{
+  "total_ambassadors": 4,
+  "total_activities": 5,
+  "total_people_reached": 115,
+  "activities_per_ambassador_avg": 1.25,
+  "department_coverage": {
+    "IT": 1,
+    "Finance": 1,
+    "HR": 1,
+    "Operations": 1
+  },
+  "monthly_trends": [
+    {
+      "month": "2026-01",
+      "activities": 5,
+      "participants": 115
+    }
+  ]
+}
+
+
+0
+
+
+Dashboard generated: metrics_charts/metrics_dashboard.png
+Executive summary saved: exports/executive_summary.txt
+
+
+-rw-r--r-- 1 toor toor 168K Feb 20 11:23 metrics_charts/metrics_dashboard.png
+-rw-r--r-- 1 toor toor 1.6K Feb 20 11:23 exports/executive_summary.txt
+
+
+AMBASSADOR PROGRAM - EXECUTIVE SUMMARY
+============================================================
+Generated at (UTC): 2026-02-20T11:23:11.612940Z
+
+KEY TOTALS
+------------------------------------------------------------
+Total Ambassadors: 4
+Total Activities: 5
+Total People Reached: 115
+
+KPI SUMMARY
+------------------------------------------------------------
+Participation Rate: 100.0%
+Reach per Activity: 23.0
+Reach per Ambassador: 28.75
+Impact Score (0-100): 10.6
+
+TRENDS
+------------------------------------------------------------
+Latest Month: None
+Previous Month: None
+Activity Change: 0.0%
+Reach Change: 0.0%
+
+RECOMMENDATIONS
+------------------------------------------------------------
+1. Scale program reach: recruit additional ambassadors in underrepresented departments and expand the activity mix.
+2. Program performance is healthy. Continue current cadence and focus on consistent reporting and quarterly improvements.
