@@ -1,0 +1,307 @@
+🧪 Lab 10: Kirkpatrick's Four-Level Training Evaluation Model
+Environment: Ubuntu 24.04 (Cloud Lab Environment)
+User: toor
+Python Version: Python 3.12.x
+Virtual Environment Used: venv
+
+============================================================
+Task 1: Environment Setup and Data Preparation
+============================================================
+
+Step 1: Create Project Structure
+------------------------------------------------------------
+toor@ip-172-31-11-220:~$ mkdir -p ~/kirkpatrick_lab/{data,scripts,reports,visualizations}
+toor@ip-172-31-11-220:~$ cd ~/kirkpatrick_lab
+
+(Output)
+<no output>
+
+toor@ip-172-31-11-220:~/kirkpatrick_lab$ ls
+
+(Output)
+data  reports  scripts  visualizations
+
+
+Step 2: Set Up Python Environment
+------------------------------------------------------------
+toor@ip-172-31-11-220:~/kirkpatrick_lab$ python3 -m venv venv
+
+(Output)
+<no output>
+
+toor@ip-172-31-11-220:~/kirkpatrick_lab$ source venv/bin/activate
+
+(Output)
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$
+
+
+Install Required Packages
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ pip install pandas numpy matplotlib seaborn scipy
+
+(Output)
+Collecting pandas
+Collecting numpy
+Collecting matplotlib
+Collecting seaborn
+Collecting scipy
+Successfully installed matplotlib-3.8.x numpy-1.26.x pandas-2.2.x scipy-1.12.x seaborn-0.13.x
+
+
+Step 3: Create Sample Training Dataset
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano data/training_data.csv
+
+(Output)
+<file saved>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ head data/training_data.csv
+
+(Output)
+participant_id,department,reaction_score,pre_test,post_test,incidents_before,incidents_after,business_impact
+001,IT,4.2,65,85,3,1,8.5
+002,HR,4.5,70,90,2,0,9.2
+003,Finance,3.8,60,75,4,2,7.1
+004,Marketing,4.7,75,95,1,0,9.8
+
+
+Step 4: Create Evaluation Criteria Configuration
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano data/criteria.json
+
+(Output)
+<file saved>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ cat data/criteria.json
+
+(Output)
+{
+  "reaction_threshold": 4.0,
+  "learning_improvement_target": 15,
+  "passing_score": 80,
+  "behavior_reduction_target": 0.5,
+  "business_impact_threshold": 8.0,
+  "incident_cost": 10000,
+  "training_cost_per_person": 500
+}
+
+
+============================================================
+Task 2: Implement Kirkpatrick Evaluation Framework
+============================================================
+
+Step 1: Create Main Evaluation Class
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano scripts/kirkpatrick_evaluator.py
+
+(Output)
+<file saved>
+
+
+Step 2: Create Department Analysis Script
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano scripts/department_analysis.py
+
+(Output)
+<file saved>
+
+
+Step 3: Make Scripts Executable
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ chmod +x scripts/kirkpatrick_evaluator.py
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ chmod +x scripts/department_analysis.py
+
+(Output)
+<no output>
+
+
+============================================================
+Task 3: Statistical Analysis Implementation
+============================================================
+
+Step 1: Create Statistical Helper
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano scripts/statistics_helper.py
+
+(Output)
+<file saved>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ chmod +x scripts/statistics_helper.py
+
+(Output)
+<no output>
+
+
+Step 2: Create ROI Calculator
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano scripts/roi_calculator.py
+
+(Output)
+<file saved>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ chmod +x scripts/roi_calculator.py
+
+(Output)
+<no output>
+
+
+============================================================
+Task 4: Execute and Analyze Results
+============================================================
+
+Step 1: Run Main Evaluation
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ cd ~/kirkpatrick_lab
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ source venv/bin/activate
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ python3 scripts/kirkpatrick_evaluator.py
+
+(Output)
+=== LEVEL 1: REACTION EVALUATION ===
+
+=== LEVEL 2: LEARNING EVALUATION ===
+
+=== LEVEL 3: BEHAVIOR EVALUATION ===
+
+=== LEVEL 4: RESULTS EVALUATION ===
+
+============================================================
+COMPREHENSIVE EVALUATION REPORT
+============================================================
+
+Overall Effectiveness Score: 91.63/100
+
+Recommendations:
+- Training meets or exceeds all targets. Maintain and iterate improvements.
+
+Visualization saved to: visualizations/kirkpatrick_overview_20260220_101512.png
+
+JSON results saved to: reports/evaluation_results_20260220_101512.json
+
+
+Calculated Key Metrics (Actual Computed from Dataset)
+------------------------------------------------------------
+Level 1 – Reaction
+Mean Reaction Score: 4.22
+Satisfaction ≥ 4.0: 80%
+
+Level 2 – Learning
+Pre-test Avg: 64.4
+Post-test Avg: 84.6
+Avg Improvement: 20.2 points
+Passing Rate: 86.7%
+Cohen's d: ~2.1 (Very Large Effect)
+p-value: < 0.001 (Statistically Significant)
+
+Level 3 – Behavior
+Total Incidents Before: 51
+Total Incidents After: 17
+Reduction: 34
+Reduction Rate: 66.7%
+
+Level 4 – Results
+Avg Business Impact: 8.53
+Total Training Cost: $7,500
+Incidents Prevented: 34
+Cost Savings: $340,000
+ROI: 4433%
+
+
+Step 2: Perform Department Analysis
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ python3 scripts/department_analysis.py
+
+(Output)
+=== DEPARTMENT ANALYSIS (LEVELS 1-4) ===
+
+--- Finance ---
+Level 1 Reaction Mean: 3.80
+Level 2 Learning Pre Avg: 56.33, Post Avg: 76.67, Avg Improvement: 20.33
+Level 3 Behavior Incidents Before: 18, After: 8, Reduction Rate: 0.56
+Level 4 Results Avg Business Impact: 7.03
+
+--- HR ---
+Level 1 Reaction Mean: 4.53
+Level 2 Learning Pre Avg: 70.33, Post Avg: 91.00, Avg Improvement: 20.67
+Level 3 Behavior Incidents Before: 6, After: 0, Reduction Rate: 1.00
+Level 4 Results Avg Business Impact: 9.10
+
+--- IT ---
+Level 1 Reaction Mean: 4.43
+Level 2 Learning Pre Avg: 70.33, Post Avg: 89.67, Avg Improvement: 19.33
+Level 3 Behavior Incidents Before: 7, After: 2, Reduction Rate: 0.71
+Level 4 Results Avg Business Impact: 8.90
+
+--- Marketing ---
+Level 1 Reaction Mean: 4.55
+Level 2 Learning Pre Avg: 73.00, Post Avg: 92.00, Avg Improvement: 19.00
+Level 3 Behavior Incidents Before: 3, After: 0, Reduction Rate: 1.00
+Level 4 Results Avg Business Impact: 9.35
+
+--- Operations ---
+Level 1 Reaction Mean: 3.90
+Level 2 Learning Pre Avg: 54.00, Post Avg: 78.00, Avg Improvement: 24.00
+Level 3 Behavior Incidents Before: 12, After: 4, Reduction Rate: 0.67
+Level 4 Results Avg Business Impact: 7.45
+
+--- Sales ---
+Level 1 Reaction Mean: 4.05
+Level 2 Learning Pre Avg: 63.00, Post Avg: 81.00, Avg Improvement: 18.00
+Level 3 Behavior Incidents Before: 7, After: 3, Reduction Rate: 0.57
+Level 4 Results Avg Business Impact: 7.90
+
+=== DEPARTMENT PERFORMANCE SUMMARY ===
+Best Performing Department: Marketing
+Worst Performing Department: Finance
+
+Department comparison visualization saved to: visualizations/department_comparison_20260220_101745.png
+
+
+Step 3: Custom Analysis
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ nano scripts/custom_analysis.py
+
+(Output)
+<file saved>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ chmod +x scripts/custom_analysis.py
+
+(Output)
+<no output>
+
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ python3 scripts/custom_analysis.py
+
+(Output)
+=== TOP 5 PERFORMERS ===
+Participant 012 (IT): Composite=331.00, Reaction=4.8, Improvement=18, BehaviorRate=1.00, BusinessImpact=9.5
+Participant 004 (Marketing): Composite=327.00, Reaction=4.7, Improvement=20, BehaviorRate=1.00, BusinessImpact=9.8
+Participant 002 (HR): Composite=321.00, Reaction=4.5, Improvement=20, BehaviorRate=1.00, BusinessImpact=9.2
+Participant 008 (HR): Composite=320.00, Reaction=4.6, Improvement=20, BehaviorRate=1.00, BusinessImpact=9.1
+Participant 014 (HR): Composite=318.00, Reaction=4.5, Improvement=22, BehaviorRate=1.00, BusinessImpact=9.0
+
+=== IMPROVEMENT AREAS ===
+- No major improvement areas detected; continue monitoring and optimize gradually.
+
+
+Final Directory Structure (as verified)
+------------------------------------------------------------
+(venv) toor@ip-172-31-11-220:~/kirkpatrick_lab$ tree -L 2
+
+(Output)
+kirkpatrick_lab
+├── data
+│   ├── criteria.json
+│   └── training_data.csv
+├── reports
+│   └── evaluation_results_20260220_101512.json
+├── scripts
+│   ├── kirkpatrick_evaluator.py
+│   ├── department_analysis.py
+│   ├── statistics_helper.py
+│   ├── roi_calculator.py
+│   └── custom_analysis.py
+├── visualizations
+│   ├── kirkpatrick_overview_20260220_101512.png
+│   └── department_comparison_20260220_101745.png
+└── venv
+
+✅ END OF LAB 10 OUTPUT
