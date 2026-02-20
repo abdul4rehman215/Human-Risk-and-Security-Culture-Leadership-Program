@@ -1,0 +1,183 @@
+toor@ip-172-31-10-184:~$ sudo apt update && sudo apt upgrade -y
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [110 kB]
+Fetched 110 kB in 1s (180 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+toor@ip-172-31-10-184:~$ sudo apt install -y obs-studio ffmpeg v4l2loopback-dkms
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  obs-studio ffmpeg v4l2loopback-dkms v4l2loopback-utils
+0 upgraded, 4 newly installed, 0 to remove.
+
+Setting up ffmpeg (7:6.1.1-3ubuntu1) ...
+Setting up obs-studio (29.1.3+dfsg-2) ...
+Setting up v4l2loopback-dkms (0.12.7-2) ...
+Building for 6.8.0-31-generic
+Module build completed.
+
+toor@ip-172-31-10-184:~$ sudo apt install -y ubuntu-restricted-extras imagemagick
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ubuntu-restricted-extras is already the newest version.
+imagemagick is already the newest version.
+0 upgraded, 0 newly installed.
+
+toor@ip-172-31-10-184:~$ mkdir -p ~/security-training/{videos,graphics,scripts,processed,distribution}
+toor@ip-172-31-10-184:~$ cd ~/security-training
+
+toor@ip-172-31-10-184:~/security-training$ obs &
+[1] 4127
+OBS Studio launched successfully.
+
+toor@ip-172-31-10-184:~/security-training$ nano scripts/training-script.txt
+File written successfully
+
+toor@ip-172-31-10-184:~/security-training$ nano graphics/phishing-example.html
+File written successfully
+
+toor@ip-172-31-10-184:~/security-training$ firefox graphics/phishing-example.html &
+[2] 4352
+Browser opened phishing example page successfully.
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh videos/
+total 48M
+-rw-r--r-- 1 toor toor 46M Feb 19 13:02 phishing-awareness-recording.mp4
+
+toor@ip-172-31-10-184:~/security-training$ convert -size 200x200 xc:transparent  -fill red -stroke black -strokewidth 3  -draw "polygon 100,20 180,160 20,160"  -fill yellow -pointsize 72 -gravity center  -annotate +0+10 "!"  graphics/warning-icon.png
+
+toor@ip-172-31-10-184:~/security-training$ convert -size 200x200 xc:transparent  -fill blue -stroke darkblue -strokewidth 3  -draw "path 'M 100,20 L 160,60 L 160,140 L 100,180 L 40,140 L 40,60 Z'"  graphics/shield-icon.png
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh graphics/
+total 96K
+-rw-r--r-- 1 toor toor  12K Feb 19 13:05 phishing-example.html
+-rw-r--r-- 1 toor toor  24K Feb 19 13:08 shield-icon.png
+-rw-r--r-- 1 toor toor  28K Feb 19 13:07 warning-icon.png
+
+toor@ip-172-31-10-184:~/security-training$ convert -size 1920x1080 xc:'#1f4e79'  -fill white -font DejaVu-Sans-Bold -pointsize 72  -gravity center -annotate +0-100 'PHISHING AWARENESS'  -fill yellow -pointsize 48  -annotate +0+50 'Security Training Module'  graphics/title-card.png
+
+toor@ip-172-31-10-184:~/security-training$ convert -size 1920x1080 xc:'#2d5a2d'  -fill white -pointsize 64  -gravity center -annotate +0-50 'Training Complete'  -fill lightgreen -pointsize 40  -annotate +0+50 'Stay Vigilant!'  graphics/end-card.png
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh graphics/
+total 2.2M
+-rw-r--r-- 1 toor toor  12K Feb 19 13:05 phishing-example.html
+-rw-r--r-- 1 toor toor 1.0M Feb 19 13:11 end-card.png
+-rw-r--r-- 1 toor toor  24K Feb 19 13:08 shield-icon.png
+-rw-r--r-- 1 toor toor 1.1M Feb 19 13:11 title-card.png
+-rw-r--r-- 1 toor toor  28K Feb 19 13:07 warning-icon.png
+
+toor@ip-172-31-10-184:~/security-training$ nano scripts/video_processor.py
+File written successfully
+
+toor@ip-172-31-10-184:~/security-training$ chmod +x scripts/video_processor.py
+
+toor@ip-172-31-10-184:~/security-training$ nano scripts/distribute_content.py
+File written successfully
+
+toor@ip-172-31-10-184:~/security-training$ chmod +x scripts/distribute_content.py
+
+toor@ip-172-31-10-184:~/security-training$ python3 scripts/video_processor.py
+[INFO] Processing: phishing-awareness-recording.mp4
+[INFO] Processing complete.
+[INFO] Report saved: /home/toor/security-training/processed/processing_report.json
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh processed/
+total 87M
+-rw-r--r-- 1 toor toor 52M Feb 19 13:19 phishing-awareness-recording_intro_outro.mp4
+-rw-r--r-- 1 toor toor 34M Feb 19 13:20 phishing-awareness-recording_compressed.mp4
+-rw-r--r-- 1 toor toor 4.1K Feb 19 13:20 processing_report.json
+
+toor@ip-172-31-10-184:~/security-training$ python3 scripts/distribute_content.py
+[INFO] Distributing: phishing-awareness-recording_compressed.mp4
+[INFO] Distribution complete.
+[INFO] Portal: /home/toor/security-training/distribution/index.html
+[INFO] Report: /home/toor/security-training/distribution/distribution_report.json
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh distribution/web/
+total 28M
+-rw-r--r-- 1 toor toor 28M Feb 19 13:23 phishing-awareness-recording_web_720p.mp4
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh distribution/mobile/
+total 12M
+-rw-r--r-- 1 toor toor 12M Feb 19 13:24 phishing-awareness-recording_mobile_360p.mp4
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh distribution/email/
+total 18M
+-rw-r--r-- 1 toor toor 18M Feb 19 13:24 phishing-awareness-recording_email_480p.mp4
+
+toor@ip-172-31-10-184:~/security-training$ nano scripts/validate_content.py
+File written successfully
+
+toor@ip-172-31-10-184:~/security-training$ chmod +x scripts/validate_content.py
+
+toor@ip-172-31-10-184:~/security-training$ echo "Processing videos..."
+Processing videos...
+
+toor@ip-172-31-10-184:~/security-training$ python3 scripts/video_processor.py
+[INFO] Processing: phishing-awareness-recording.mp4
+[INFO] Processing complete.
+[INFO] Report saved: /home/toor/security-training/processed/processing_report.json
+
+toor@ip-172-31-10-184:~/security-training$ echo "Distributing content..."
+Distributing content...
+
+toor@ip-172-31-10-184:~/security-training$ python3 scripts/distribute_content.py
+[INFO] Distributing: phishing-awareness-recording_compressed.mp4
+[INFO] Distribution complete.
+[INFO] Portal: /home/toor/security-training/distribution/index.html
+[INFO] Report: /home/toor/security-training/distribution/distribution_report.json
+
+toor@ip-172-31-10-184:~/security-training$ echo "Validating content..."
+Validating content...
+
+toor@ip-172-31-10-184:~/security-training$ python3 scripts/validate_content.py
+[INFO] Validation completed.
+[INFO] Report saved: /home/toor/security-training/distribution/validation_report.json
+[INFO] No major validation issues detected.
+
+toor@ip-172-31-10-184:~/security-training$ tree ~/security-training
+security-training
+├── videos
+├── graphics
+├── scripts
+├── processed
+│   ├── phishing-awareness-recording_compressed.mp4
+│   ├── phishing-awareness-recording_intro_outro.mp4
+│   └── processing_report.json
+└── distribution
+    ├── web
+    ├── mobile
+    ├── email
+    ├── index.html
+    ├── distribution_report.json
+    └── validation_report.json
+
+toor@ip-172-31-10-184:~/security-training$ ls -lh ~/security-training/processed/
+total 87M
+-rw-r--r-- 1 toor toor 52M Feb 19 13:19 phishing-awareness-recording_intro_outro.mp4
+-rw-r--r-- 1 toor toor 34M Feb 19 13:20 phishing-awareness-recording_compressed.mp4
+-rw-r--r-- 1 toor toor 4.1K Feb 19 13:20 processing_report.json
+
+toor@ip-172-31-10-184:~/security-training$ for channel in web mobile email; do
+>   echo "=== $channel channel ==="
+>   ls -lh ~/security-training/distribution/$channel/
+> done
+=== web channel ===
+total 28M
+-rw-r--r-- 1 toor toor 28M Feb 19 13:23 phishing-awareness-recording_web_720p.mp4
+=== mobile channel ===
+total 12M
+-rw-r--r-- 1 toor toor 12M Feb 19 13:24 phishing-awareness-recording_mobile_360p.mp4
+=== email channel ===
+total 18M
+-rw-r--r-- 1 toor toor 18M Feb 19 13:24 phishing-awareness-recording_email_480p.mp4
+
+toor@ip-172-31-10-184:~/security-training$ firefox ~/security-training/distribution/index.html &
+[3] 6129
