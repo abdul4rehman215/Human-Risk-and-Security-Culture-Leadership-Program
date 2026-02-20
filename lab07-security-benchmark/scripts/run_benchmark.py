@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Main Benchmarking Execution Script
-Students: Complete the TODO sections
 """
 
 from benchmark_analyzer import BenchmarkAnalyzer
