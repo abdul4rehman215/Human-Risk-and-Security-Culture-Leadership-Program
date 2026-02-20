@@ -1,4 +1,4 @@
-## 🎤 Interview Q&A - Lab 17: Compliance vs Impact Metrics (Security Culture Analytics)
+# 🎤 Interview Q&A - Lab 17: Compliance vs Impact Metrics (Security Culture Analytics)
 
 ---
 
