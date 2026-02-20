@@ -1,0 +1,163 @@
+toor@ip-172-31-24-118:~$ mkdir -p ~/security_program/{config,data,reports,scripts}
+toor@ip-172-31-24-118:~$ cd ~/security_program
+toor@ip-172-31-24-118:~/security_program$
+
+toor@ip-172-31-24-118:~/security_program$ ls -la
+total 20
+drwxr-xr-x  6 toor toor 4096 Feb 20 12:10 .
+drwxr-x--- 18 toor toor 4096 Feb 20 12:10 ..
+drwxr-xr-x  2 toor toor 4096 Feb 20 12:10 config
+drwxr-xr-x  2 toor toor 4096 Feb 20 12:10 data
+drwxr-xr-x  2 toor toor 4096 Feb 20 12:10 reports
+drwxr-xr-x  2 toor toor 4096 Feb 20 12:10 scripts
+
+toor@ip-172-31-24-118:~/security_program$ cat config/program_config.json
+{
+  "program_info": {
+    "name": "Enterprise Security Culture Program",
+    "start_date": "2024-01-01",
+    "duration_years": 3
+  },
+  "objectives": {
+    "awareness_improvement": {"baseline": 45, "target": 85},
+    "incident_reduction": {"baseline": 100, "target": 40},
+    "training_completion": {"baseline": 55, "target": 90},
+    "compliance_score": {"baseline": 70, "target": 95}
+  },
+  "phases": [
+    {
+      "name": "Foundation",
+      "duration_months": 6,
+      "focus": ["Assessment", "Policy Development", "Initial Training"]
+    },
+    {
+      "name": "Implementation",
+      "duration_months": 18,
+      "focus": ["Program Rollout", "Training Delivery", "Culture Change"]
+    },
+    {
+      "name": "Optimization",
+      "duration_months": 12,
+      "focus": ["Continuous Improvement", "Advanced Training", "Sustainability"]
+    }
+  ]
+}
+
+toor@ip-172-31-24-118:~/security_program$ cd scripts
+toor@ip-172-31-24-118:~/security_program/scripts$ python3 strategy_engine.py
+
+=== Security Program Strategy Development ===
+Strategy report saved to ../reports/strategy_report.json
+Program duration: 2024-01-01 to 2026-12-31
+Total phases: 3
+
+toor@ip-172-31-24-118:~/security_program/scripts$ cat ../reports/strategy_report.json | head -30
+{
+    "metadata": {
+        "generated_on": "2026-02-20 12:14:08",
+        "version": "1.0"
+    },
+    "timeline": {
+        "start_date": "2024-01-01",
+        "end_date": "2026-12-31",
+        "quarterly_milestones": [
+            "2024-01-01",
+            "2024-03-31",
+            "2024-06-29",
+            "2024-09-27",
+            "2024-12-26",
+            ...
+        ]
+    },
+    "roadmap": {
+        "phases": [
+            {
+                "name": "Foundation",
+                "duration_months": 6,
+                ...
+
+toor@ip-172-31-24-118:~/security_program$ python3 scripts/project_planner.py
+
+=== Project Planning Engine ===
+Task list exported to data/task_list.csv
+Project plan saved to reports/project_plan.json
+Total tasks: 108
+Total milestones: 15
+
+toor@ip-172-31-24-118:~/security_program$ cat reports/project_plan.json | grep -A 5 "phase"
+"phase": "Foundation",
+"task_name": "Baseline Assessment",
+"task_type": "main",
+"start_date": "2024-01-01",
+"end_date": "2024-03-01",
+"duration_days": 60
+--
+"phase": "Implementation",
+"task_name": "Program Rollout",
+"task_type": "main",
+
+toor@ip-172-31-24-118:~/security_program$ head -20 data/task_list.csv
+task_id,phase,task_name,task_type,start_date,end_date,duration_days,parent_task_id
+T0001,Foundation,Baseline Assessment,main,2024-01-01,2024-03-01,60,
+T0002,Foundation,Survey security culture,subtask,2024-01-01,2024-01-20,19,T0001
+T0003,Foundation,Review incidents data,subtask,2024-01-20,2024-02-10,21,T0001
+T0004,Foundation,Assess awareness maturity,subtask,2024-02-10,2024-03-01,19,T0001
+...
+
+toor@ip-172-31-24-118:~/security_program$ python3 scripts/monitoring_system.py
+
+=== Program Monitoring System ===
+Metrics appended to data/metrics_history.csv
+
+--- Current Metrics ---
+timestamp: 2026-02-20 12:20:31
+awareness_score: 72
+training_completion: 81
+incident_count: 58
+compliance_score: 88
+
+--- Alerts ---
+[MEDIUM] awareness_score is at-risk: current=72 target=85
+[MEDIUM] incident_count is at-risk: current=58 target=40
+
+Status report saved to reports/status_report.json
+
+toor@ip-172-31-24-118:~/security_program$ python3 scripts/automated_reporting.py
+
+=== Automated Reporting System ===
+Charts saved to reports/automated_reports/charts
+Reports exported to reports/automated_reports
+
+--- Executive Summary Preview ---
+Program Health Score: 82.75
+Critical Issues: ['No critical issues detected.']
+
+toor@ip-172-31-24-118:~/security_program$ ls -lh reports/
+-rw-r--r-- 1 toor toor  45K Feb 20 12:20 project_plan.json
+-rw-r--r-- 1 toor toor  12K Feb 20 12:20 status_report.json
+drwxr-xr-x 3 toor toor 4.0K Feb 20 12:20 automated_reports
+-rw-r--r-- 1 toor toor  15K Feb 20 12:14 strategy_report.json
+
+toor@ip-172-31-24-118:~/security_program$ ls -lh reports/automated_reports/charts/
+awareness_trend.png
+training_completion_trend.png
+incident_trend.png
+compliance_trend.png
+
+toor@ip-172-31-24-118:~/security_program$ python3 scripts/governance_framework.py
+=== Governance Framework Development ===
+Governance framework saved to reports/governance_framework.json
+Program: Enterprise Security Culture Program
+Version: 1.0
+
+toor@ip-172-31-24-118:~/security_program$ ls -lh reports/
+governance_framework.json
+project_plan.json
+strategy_report.json
+status_report.json
+automated_reports/
+program_documentation.md
+
+toor@ip-172-31-24-118:~/security_program$ ls -la data/
+task_list.csv
+metrics_history.csv
