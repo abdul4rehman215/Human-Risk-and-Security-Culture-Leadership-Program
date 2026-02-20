@@ -66,6 +66,7 @@ By completing this lab, I was able to:
 ```
 
 lab10-kirkpatrick-training-evaluation-model/
+│   
 ├── README.md
 ├── commands.sh
 ├── output.txt
@@ -75,17 +76,21 @@ lab10-kirkpatrick-training-evaluation-model/
 ├── data/
 │   ├── criteria.json
 │   └── training_data.csv
+│   
 ├── reports/
 │   └── evaluation_results_TIMESTAMP.json
+│   
 ├── scripts/
 │   ├── kirkpatrick_evaluator.py
 │   ├── department_analysis.py
 │   ├── statistics_helper.py
 │   ├── roi_calculator.py
 │   └── custom_analysis.py
+│   
 ├── visualizations/
 │   ├── kirkpatrick_overview_TIMESTAMP.png
 │   └── department_comparison_TIMESTAMP.png
+│   
 └── venv/
 
 ```
