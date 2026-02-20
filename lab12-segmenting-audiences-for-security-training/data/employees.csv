@@ -1,0 +1,11 @@
+employee_id,name,department,role,location,access_level,last_training,incident_history,years_experience,risk_score
+EMP001,Employee 1,IT,Developer,New York,High,6-12 months ago,None,7,7
+EMP002,Employee 2,Operations,Project Manager,Chicago,High,Over 1 year ago,Moderate,5,8
+EMP003,Employee 3,Legal,Compliance Officer,Houston,Medium,Within 3 months,None,12,4
+EMP004,Employee 4,Executive,VP Operations,Los Angeles,Critical,6-12 months ago,Minor,15,11
+EMP005,Employee 5,Marketing,Content Creator,Phoenix,Medium,Never,None,1,6
+EMP006,Employee 6,HR,Recruiter,Los Angeles,Low,Within 3 months,Minor,3,3
+EMP007,Employee 7,Finance,Accountant,New York,High,6-12 months ago,None,9,6
+EMP008,Employee 8,Operations,Operations Manager,Houston,Medium,Over 1 year ago,Severe,4,7
+EMP009,Employee 9,IT,System Administrator,Chicago,Critical,Over 1 year ago,Minor,11,12
+EMP010,Employee 10,Marketing,Marketing Specialist,New York,Low,Within 3 months,None,6,2
