@@ -1,0 +1,98 @@
+{
+  "survey_title": "Cybersecurity Ambassador Program Assessment",
+  "sections": [
+    {
+      "section_name": "Demographics",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is your primary department?",
+          "type": "multiple_choice",
+          "options": ["IT", "HR", "Finance", "Operations", "Marketing", "Sales", "Other"]
+        },
+        {
+          "id": 2,
+          "question": "How many years have you been with the organization?",
+          "type": "multiple_choice",
+          "options": ["<1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"]
+        }
+      ]
+    },
+    {
+      "section_name": "Security Knowledge",
+      "questions": [
+        {
+          "id": 3,
+          "question": "Rate your cybersecurity knowledge",
+          "type": "scale",
+          "scale": "1-5",
+          "labels": {
+            "1": "Beginner",
+            "5": "Expert"
+          }
+        },
+        {
+          "id": 4,
+          "question": "Which security topics are you most confident about?",
+          "type": "checkbox",
+          "options": [
+            "Password security",
+            "Email security",
+            "Social engineering",
+            "Data protection",
+            "Mobile security",
+            "Physical security"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Leadership and Communication",
+      "questions": [
+        {
+          "id": 5,
+          "question": "How often do colleagues ask you for technical help?",
+          "type": "multiple_choice",
+          "options": ["Daily", "Weekly", "Monthly", "Rarely", "Never"]
+        },
+        {
+          "id": 6,
+          "question": "Rate your comfort level presenting to groups",
+          "type": "scale",
+          "scale": "1-5",
+          "labels": {
+            "1": "Very uncomfortable",
+            "5": "Very comfortable"
+          }
+        }
+      ]
+    },
+    {
+      "section_name": "Program Interest",
+      "questions": [
+        {
+          "id": 7,
+          "question": "How interested are you in becoming a security ambassador?",
+          "type": "scale",
+          "scale": "1-5",
+          "labels": {
+            "1": "Not interested",
+            "5": "Very interested"
+          }
+        },
+        {
+          "id": 8,
+          "question": "How much time could you dedicate monthly?",
+          "type": "multiple_choice",
+          "options": ["1-2 hours", "3-5 hours", "6-10 hours", "10+ hours"]
+        },
+        {
+          "id": 9,
+          "question": "What would motivate you to participate?",
+          "type": "text",
+          "max_length": 500
+        }
+      ]
+    }
+  ]
+}
