@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Security Culture Dashboard</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+ <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+ <div class="container">
+ <header>
+ <h1>Security Culture Dashboard</h1>
+ <div id="lastUpdated"></div>
+ </header>
+
+ <div class="metrics-grid">
+ <div class="card" id="kpi-card">
+ <h2>Key Performance Indicators</h2>
+ <div id="kpi-container"></div>
+ </div>
+
+ <div class="card" id="training-chart">
+ <h2>Training Effectiveness</h2>
+ <svg id="training-svg"></svg>
+ </div>
+
+ <div class="card" id="phishing-chart">
+ <h2>Phishing Resilience</h2>
+ <svg id="phishing-svg"></svg>
+ </div>
+
+ <div class="card" id="culture-chart">
+ <h2>Culture Score Trends</h2>
+ <svg id="culture-svg"></svg>
+ </div>
+
+ <div class="card" id="department-chart">
+ <h2>Department Comparison</h2>
+ <svg id="department-svg"></svg>
+ </div>
+ </div>
+ </div>
+
+ <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
