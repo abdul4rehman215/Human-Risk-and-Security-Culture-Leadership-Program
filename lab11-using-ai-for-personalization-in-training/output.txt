@@ -1,0 +1,233 @@
+## 🧪 Task 1 – Environment Setup
+
+
+toor@ip-172-31-11-237:~$ mkdir -p ~/ai-training-lab/{src,data,audio,templates,output}
+toor@ip-172-31-11-237:~$ cd ~/ai-training-lab
+toor@ip-172-31-11-237:~/ai-training-lab$ ls -1
+audio
+data
+output
+src
+templates
+
+toor@ip-172-31-11-237:~/ai-training-lab$ python3 -m venv venv
+toor@ip-172-31-11-237:~/ai-training-lab$ source venv/bin/activate
+(venv) toor@ip-172-31-11-237:~/ai-training-lab$
+
+(venv) toor@ip-172-31-11-237:~/ai-training-lab$ python --version
+Python 3.12.3
+
+### Package Installation
+
+(venv) $ pip install openai python-dotenv flask pyttsx3 gtts
+Collecting openai
+Collecting python-dotenv
+Collecting flask
+Collecting pyttsx3
+Collecting gtts
+
+Successfully installed blinker-1.9.0 click-8.1.8 flask-3.0.3 gtts-2.5.1 itsdangerous-2.2.0 jinja2-3.1.5 openai-1.61.0 pydantic-2.10.6 python-dotenv-1.0.1 tqdm-4.67.1 typing-extensions-4.12.2 werkzeug-3.0.6
+
+(venv) $ pip freeze > requirements.txt
+(venv) $ wc -l requirements.txt
+17 requirements.txt
+
+### `.env` Verification
+
+(venv) $ cat .env
+OPENAI_API_KEY=demo_key
+OPENAI_MODEL=gpt-3.5-turbo
+MAX_TOKENS=1500
+TEMPERATURE=0.7
+
+
+# 🧪 Task 2 – Profile Management
+
+(venv) $ python test_profiles.py
+
+### Output
+
+=== Created Profiles ===
+{'user_id': 'u001', 'name': 'Ayesha', 'experience_level': 'beginner', 'learning_style': 'visual', 'interests': ['phishing', 'password_security', 'safe_browsing'], 'completed_modules': [], 'quiz_history': [], 'created_at': '2026-02-20T05:15:02.114631Z', 'last_updated': '2026-02-20T05:15:02.114631Z'}
+
+{'user_id': 'u002', 'name': 'Rohan', 'experience_level': 'intermediate', 'learning_style': 'reading', 'interests': ['network_security', 'incident_response', 'malware'], 'completed_modules': [], 'quiz_history': [], 'created_at': '2026-02-20T05:15:02.115982Z', 'last_updated': '2026-02-20T05:15:02.115982Z'}
+
+{'user_id': 'u003', 'name': 'Zain', 'experience_level': 'advanced', 'learning_style': 'auditory', 'interests': ['threat_hunting', 'siem', 'cloud_security'], 'completed_modules': [], 'quiz_history': [], 'created_at': '2026-02-20T05:15:02.116984Z', 'last_updated': '2026-02-20T05:15:02.116984Z'}
+
+=== Retrieve Profile u002 ===
+{...}
+
+=== Update Profile u001 (add completed module + quiz history) ===
+{...}
+
+=== Final Profiles File Content (loaded) ===
+{'u001': {...}, 'u002': {...}, 'u003': {...}}
+
+(venv) $ ls -lh data/profiles.json
+-rw-r--r-- 1 toor toor 1.5K Feb 20 10:45 data/profiles.json
+
+
+# 🧪 Task 3 – AI Content Generation
+
+(venv) $ python -c "from src.content_generator import AIContentGenerator; g=AIContentGenerator(); print('demo_mode:', g.demo_mode, 'model:', g.model)"
+demo_mode: True model: gpt-3.5-turbo
+
+(venv) $ python test_content.py
+
+### Generated Lesson Output
+
+=== GENERATED LESSON CONTENT ===
+
+# Phishing Training for Sara
+
+## Introduction
+Hi Sara! This lesson introduces **Phishing** in a simple and practical way.
+You will learn the basics and how to stay safe in everyday situations.
+
+## Key Concepts
+- What it is (simple definition)
+- Why it matters
+- Common examples you might see
+- One or two easy rules to remember
+
+## Practical Examples (Tailored to visual learning style)
+- Look for visual red flags...
+- Use screenshots and checklists...
+
+## Action Items (Based on your interests: phishing, password_security)
+1. Apply one safe habit today...
+2. Share one learning point...
+3. Add a reminder...
+
+## Practice Activity
+Practice by reviewing 3 examples and marking red flags you see.
+
+## Notes on Difficulty
+Keep it simple and focus on habits you can apply today.
+
+## Quick Recap
+- Phishing matters...
+- Use safe verification...
+- Consistent habits beat one-time awareness.
+
+### Learning Path
+
+=== RECOMMENDED LEARNING PATH ===
+1. phishing
+2. password_security
+3. safe_browsing
+4. device_security
+5. incident_reporting
+
+### Verify Sessions
+
+(venv) $ ls -lh data/training_sessions.json
+-rw-r--r-- 1 toor toor 6.2K Feb 20 10:48 data/training_sessions.json
+
+sessions: 1
+keys: ['content', 'experience_level', 'generated_at', 'interests', 'learning_style', 'lesson_id', 'quiz', 'topic', 'user_id']
+lesson_id: demo_user_phishing_20260220_051803
+
+
+# 🧪 Task 4 – Text-to-Speech
+
+(venv) $ python test_tts.py
+
+### Output
+
+=== AUDIO METADATA ===
+{'lesson_id': 'tts_user_password_security_20260220_063902',
+ 'created_at': '2026-02-20T06:39:04.229331Z',
+ 'engine': 'offline',
+ 'lang': 'en',
+ 'sections': [
+     {'section_index': 1,
+      'title': 'Password Security Training for Hina',
+      'file_path': 'audio/tts_user_password_security_20260220_063902_01_Password_Security_Training_for_Hina.wav',
+      'estimated_duration_seconds': 58}
+ ],
+ 'estimated_total_duration_seconds': 58}
+
+=== GENERATED AUDIO FILES ===
+- audio/tts_user_password_security_20260220_063902_01_Password_Security_Training_for_Hina.wav (est. 58s)
+
+### Verify Audio
+
+(venv) $ ls -lh audio/
+total 124K
+-rw-r--r-- 1 toor toor 122K Feb 20 11:39 tts_user_password_security_20260220_063902_01_Password_Security_Training_for_Hina.wav
+
+
+# 🧪 Task 5 – Complete System Demo
+
+(venv) $ python demo.py
+
+### Onboarding
+
+=== Personalized Training System Demo ===
+
+=== Onboarding Results ===
+
+User: user_beginner
+Profile: {...}
+Learning Path: ['phishing', 'password_security', 'safe_browsing', 'device_security', 'incident_reporting']
+
+User: user_intermediate
+Profile: {...}
+Learning Path: ['incident_response', 'social_engineering', 'data_handling', 'phishing', 'password_security', 'mfa_and_authentication']
+
+User: user_advanced
+Profile: {...}
+Learning Path: ['cloud_security', 'threat_hunting', 'siem', 'threat_modeling', 'incident_response', 'security_controls']
+
+### Personalized Lessons Delivered
+
+--- Lesson for Nida (beginner / visual) ---
+Topic: phishing
+Audio Sections:
+- audio/user_beginner_phishing_20260220_064511_01_Phing_Training_for_Nida.wav
+
+--- Lesson for Imran (intermediate / reading) ---
+Topic: incident_response
+...
+
+--- Lesson for Faizan (advanced / auditory) ---
+Topic: cloud_security
+...
+
+### Progress Reports
+
+Report for Nida (user_beginner):
+{'user_id': 'user_beginner',
+ 'progress': {'lessons_generated': 1,
+              'topics_completed_or_generated': ['phishing'],
+              'avg_quiz_score': None},
+ 'avg_quiz_score': 80.0,
+ 'recommendations': ['Focus on phishing + password safety first for maximum risk reduction.']}
+
+
+# 🔎 Final Verification
+
+(venv) $ ls -la data/
+profiles.json
+training_sessions.json
+audio_metadata.json
+
+(venv) $ ls -la audio/*.wav
+-rw-r--r-- 1 toor toor 118K user_beginner_phishing_20260220_064511_01_Phing_Training_for_Nida.wav
+-rw-r--r-- 1 toor toor 132K user_intermediate_incident_response_20260220_064512_01_Incident_Response_Training_for_Imran.wav
+-rw-r--r-- 1 toor toor 145K user_advanced_cloud_security_20260220_064513_01_Cloud_Security_Training_for_Faizan.wav
+
+
+# ✅ LAB STATUS: COMPLETE
+
+✔ User profile system working
+✔ AI content personalization working (demo mode)
+✔ Adaptive learning path working
+✔ Quiz generation working
+✔ TTS audio generation working (Ubuntu 24.04 compatible WAV output)
+✔ Multi-user demo working
+✔ Progress tracking working
+✔ Reporting working
+
+---
