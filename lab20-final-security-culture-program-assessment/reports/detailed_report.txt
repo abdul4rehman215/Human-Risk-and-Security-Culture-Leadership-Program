@@ -1,0 +1,15 @@
+SECURITY CULTURE ASSESSMENT - DETAILED REPORT
+============================================================
+
+1) ASSESSMENT METADATA
+------------------------------------------------------------
+Program: Security Culture Program
+Organization: Sample Organization
+Assessment Period: 2024-Q1
+Assessment Date: 2026-02-20
+Assessment Version: 1.0
+
+2) METHODOLOGY
+------------------------------------------------------------
+This assessment calculates maturity scores across four categories:
+...
