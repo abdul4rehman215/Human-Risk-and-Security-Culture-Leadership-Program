@@ -1,0 +1,29 @@
+employee_id,employee_name,email_subject,email_body,priority
+EMP001,Employee 1,Immediate Follow-Up: Security Refresher Needed,"Hello Employee 1,
+
+You are receiving this message as part of our targeted security awareness program.
+Profile context: Department=IT, Role=Developer, Location=New York, Risk Score=7
+
+ATTENTION:
+Immediate Follow-Up: Security Refresher Needed
+
+INTEREST:
+Recent incidents show there is a higher chance of repeat events without reinforcement. This refresher focuses on practical prevention and correct reporting steps. As a key team member, Employee 1, you can become a security advocate by applying these steps consistently.
+
+DESIRE:
+Improve your security habits with targeted practice. This will reduce future risk and increase confidence during suspicious events.
+
+ACTION:
+Complete incident refresher training within 72 hours at training.company.com/incident-refresher.
+
+Thank you,
+Security Awareness Team
+",High
+EMP002,Employee 2,Action Required: Complete Your First Security Training,"Hello Employee 2,
+
+You are receiving this message as part of our targeted security awareness program.
+Profile context: Department=Operations, Role=Project Manager, Location=Chicago, Risk Score=8
+
+ATTENTION:
+Action Required: Complete Your First Security Training
+",Medium
