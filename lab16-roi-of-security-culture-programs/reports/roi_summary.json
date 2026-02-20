@@ -1,0 +1,12 @@
+{
+  "total_investment": 372418.61,
+  "total_benefits": 1012846.73,
+  "total_net_benefits": 640428.12,
+  "final_cumulative_roi_pct": 171.98,
+  "months_to_payback": 9,
+  "payback_date": "2024-11-01",
+  "average_monthly_roi_pct": 188.47,
+  "best_monthly_roi_pct": 422.61,
+  "worst_monthly_roi_pct": -88.02,
+  "period_months": 24
+}
