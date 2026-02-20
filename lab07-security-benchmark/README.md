@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 This lab builds a **Security Program Maturity Benchmarking** toolkit using a weighted maturity model across key security domains (governance, risk, IR, awareness, and technical controls).  
-You’ll create a benchmarking environment, define an assessment framework in YAML, run maturity scoring, and generate reports + charts.
+I created a benchmarking environment, defined an assessment framework in YAML, ran maturity scoring, and generated reports + charts.
 
 ---
 
