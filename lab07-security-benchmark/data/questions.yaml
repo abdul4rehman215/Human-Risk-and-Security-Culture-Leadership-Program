@@ -1,0 +1,29 @@
+governance:
+  - question: "Is there a documented security policy?"
+    weight: 0.4
+  - question: "Is there executive security leadership?"
+    weight: 0.6
+
+risk_management:
+  - question: "Are risk assessments conducted regularly?"
+    weight: 0.5
+  - question: "Is there a risk treatment process?"
+    weight: 0.5
+
+incident_response:
+  - question: "Does an incident response plan exist?"
+    weight: 0.6
+  - question: "Is there a dedicated IR team?"
+    weight: 0.4
+
+awareness:
+  - question: "Is security training provided annually?"
+    weight: 0.7
+  - question: "Are awareness metrics tracked?"
+    weight: 0.3
+
+technical_controls:
+  - question: "Are security controls implemented?"
+    weight: 0.4
+  - question: "Is continuous monitoring in place?"
+    weight: 0.6
