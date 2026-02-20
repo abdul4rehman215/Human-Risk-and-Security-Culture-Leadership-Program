@@ -1,0 +1,253 @@
+toor@ip-172-31-10-198:~/metrics_lab$ 
+
+Python 3.12.3
+
+
+========================================================================
+COMPLIANCE METRICS vs IMPACT METRICS (SECURITY CULTURE PROGRAMS)
+========================================================================
+
+COMPLIANCE METRICS
+------------------------------------------------------------------------
+Definition: Measures adherence to policies and training requirements
+Examples:
+  - Training completion rates
+  - Policy acknowledgment percentages
+  - Phishing simulation click rates
+  - Assessment scores
+
+IMPACT METRICS
+------------------------------------------------------------------------
+Definition: Measures behavioral change and culture improvement
+Examples:
+  - Voluntary incident reporting increases
+  - Proactive security behaviors
+  - Peer-to-peer coaching instances
+  - Security-conscious decision making
+
+KEY DIFFERENCES
+------------------------------------------------------------------------
+1) What it measures:
+   - Compliance: Completion / adherence (what people DID).
+   - Impact: Behavior + culture change (how people CHANGED).
+2) How it is used:
+   - Compliance: Proves obligations were met (audits, governance).
+   - Impact: Proves risk reduced and culture improved (strategy, ROI).
+3) Risk interpretation:
+   - High compliance can still produce low impact.
+   - High impact usually requires some compliance but goes beyond it.
+========================================================================
+
+
+Saved: compliance_metrics.csv
+Saved: impact_metrics.csv
+Sample datasets created successfully!
+
+
+-rw-r--r-- 1 toor toor 20K Feb 20 13:20 compliance_metrics.csv
+-rw-r--r-- 1 toor toor 14K Feb 20 13:20 impact_metrics.csv
+
+
+======================================================================
+COMPLIANCE: DEPARTMENT COMPARISON (Avg Compliance Score %)
+======================================================================
+Finance       88.74%
+IT            88.10%
+HR            86.94%
+Marketing     86.27%
+Operations    84.58%
+Sales         83.91%
+
+Best Performer:
+  Finance (88.74%)
+Worst Performer:
+  Sales (83.91%)
+
+======================================================================
+COMPLIANCE: TREND ANALYSIS
+======================================================================
+Trend direction (compliance_score): improving
+Rate of change (approx slope): 0.1846 score points/month
+
+======================================================================
+COMPLIANCE: GAP IDENTIFICATION
+======================================================================
+Departments needing improvement (by gap frequency & average gap):
+- Sales        training_completion_rate     count=12 avg_gap=6.45
+- Operations   training_completion_rate     count=10 avg_gap=5.12
+- Sales        phishing_click_rate          count=9 avg_gap=2.11
+- Operations   phishing_click_rate          count=7 avg_gap=1.63
+- Sales        compliance_score             count=6 avg_gap=1.92
+
+======================================================================
+COMPLIANCE: EXECUTIVE SUMMARY
+======================================================================
+Average Compliance Score: 86.43%
+Average Training Completion Rate: 84.92%
+Average Phishing Click Rate: 9.87%
+Trend: improving (slope 0.1846 points/month)
+
+Actionable Recommendations:
+- Increase completion through manager follow-ups and deadline reminders.
+
+Saved: compliance_report.txt
+
+
+Saved: dept_comparison.png
+Saved: compliance_trends.png
+Saved: correlation_heatmap.png
+
+
+======================================================================
+IMPACT: BEHAVIORAL CHANGE ANALYSIS (First Month vs Last Month)
+======================================================================
+
+Department: Finance
+  voluntary_incident_reports: 7 -> 10  (42.9%)
+  security_discussions_initiated: 16 -> 22  (37.5%)
+  proactive_security_behaviors: 18 -> 28  (55.6%)
+  peer_coaching_instances: 8 -> 11  (37.5%)
+
+Department: HR
+  voluntary_incident_reports: 4 -> 6  (50.0%)
+  security_discussions_initiated: 12 -> 16  (33.3%)
+  proactive_security_behaviors: 16 -> 23  (43.8%)
+  peer_coaching_instances: 6 -> 9  (50.0%)
+
+Department: IT
+  voluntary_incident_reports: 8 -> 12  (50.0%)
+  security_discussions_initiated: 18 -> 28  (55.6%)
+  proactive_security_behaviors: 25 -> 40  (60.0%)
+  peer_coaching_instances: 10 -> 15  (50.0%)
+
+Department: Marketing
+  voluntary_incident_reports: 4 -> 6  (50.0%)
+  security_discussions_initiated: 10 -> 16  (60.0%)
+  proactive_security_behaviors: 14 -> 22  (57.1%)
+  peer_coaching_instances: 5 -> 8  (60.0%)
+
+Department: Operations
+  voluntary_incident_reports: 5 -> 8  (60.0%)
+  security_discussions_initiated: 13 -> 19  (46.2%)
+  proactive_security_behaviors: 16 -> 25  (56.2%)
+  peer_coaching_instances: 6 -> 9  (50.0%)
+
+Department: Sales
+  voluntary_incident_reports: 3 -> 5  (66.7%)
+  security_discussions_initiated: 10 -> 14  (40.0%)
+  proactive_security_behaviors: 11 -> 18  (63.6%)
+  peer_coaching_instances: 4 -> 6  (50.0%)
+
+======================================================================
+IMPACT: CULTURE MATURITY ASSESSMENT
+======================================================================
+Overall Average Maturity Score: 67.84
+IT           72.91  ->  Defined
+Finance      69.85  ->  Defined
+HR           67.21  ->  Defined
+Marketing    66.28  ->  Defined
+Operations   64.39  ->  Defined
+Sales        66.39  ->  Defined
+
+======================================================================
+IMPACT: PROACTIVE BEHAVIOR ANALYSIS
+======================================================================
+IT           proactive_avg=82.42  incidents_avg=5.33
+Finance      proactive_avg=65.17  incidents_avg=6.02
+Operations   proactive_avg=58.66  incidents_avg=6.98
+HR           proactive_avg=53.10  incidents_avg=4.89
+Marketing    proactive_avg=50.45  incidents_avg=5.86
+Sales        proactive_avg=43.78  incidents_avg=7.62
+
+Most proactive department: IT (avg proactive 82.42)
+
+======================================================================
+IMPACT: INCIDENT REDUCTION ANALYSIS
+======================================================================
+Incidents (start -> end): 49 -> 31
+Reduction Percentage: 36.73%
+Correlation (Incidents vs Proactive Behaviors): -0.512 (negative is good)
+Correlation (Incidents vs Maturity Score): -0.468 (negative is good)
+ROI Indicator (based on reduction + correlation): Strong
+
+======================================================================
+IMPACT: EXECUTIVE SUMMARY
+======================================================================
+Average Culture Maturity Score: 67.84
+Average Monthly Incidents (dept totals vary): 6.12
+Incident Reduction (overall): 36.73%
+ROI Indicator: Strong
+
+Strategic Recommendations:
+- Maintain momentum: optimize high-impact practices and scale them across departments.
+
+Saved: impact_report.txt
+
+
+Saved: behavioral_trends.png
+Saved: maturity_progression.png
+Saved: incident_correlation.png
+
+
+========================================================================
+INTEGRATED: CORRELATION ANALYSIS (Compliance vs Impact)
+========================================================================
+Correlation: compliance_score vs culture_maturity_score = 0.421
+Correlation: training_completion_rate vs voluntary_incident_reports = 0.287
+Correlation: phishing_click_rate vs security_incidents = 0.346
+
+Interpretation Guide:
+- Correlation near +1: strong positive relationship
+- Correlation near  0: weak/no linear relationship
+- Correlation near -1: strong negative relationship
+
+Expected security interpretation:
+- Higher compliance_score should correlate with higher culture maturity (positive).
+- Higher completion may correlate with more voluntary reporting (positive).
+- Higher phishing_click_rate may correlate with higher incidents (positive).
+
+========================================================================
+INTEGRATED: EFFECTIVENESS ANALYSIS (Dept-level)
+========================================================================
+IT           compliance=88.10% maturity=72.91 incidents=5.33 phish=8.01% effectiveness=0.954
+Finance      compliance=88.74% maturity=69.85 incidents=6.02 phish=8.62% effectiveness=0.791
+HR           compliance=86.94% maturity=67.21 incidents=4.89 phish=9.51% effectiveness=0.766
+Marketing    compliance=86.27% maturity=66.28 incidents=5.86 phish=10.66% effectiveness=0.629
+Operations   compliance=84.58% maturity=64.39 incidents=6.98 phish=11.87% effectiveness=0.522
+Sales        compliance=83.91% maturity=66.39 incidents=7.62 phish=12.74% effectiveness=0.478
+
+Departments with COMPLIANCE but LOW IMPACT (high compliance, low maturity):
+  None detected in this sample dataset.
+
+Saved: executive_dashboard.png
+
+========================================================================
+INTEGRATED: STRATEGIC RECOMMENDATIONS
+========================================================================
+- Sales: Highest phishing click rate -> run targeted phishing simulations + short weekly micro-lessons.
+- Operations: Highest phishing click rate -> run targeted phishing simulations + short weekly micro-lessons.
+- Sales: Higher incident rate -> run tabletop drills + simplify incident reporting + rapid feedback loops.
+- Operations: Higher incident rate -> run tabletop drills + simplify incident reporting + rapid feedback loops.
+- Program-level: Track BOTH compliance (completion) and impact (behavior, incidents) monthly. Do not treat compliance as success by itself.
+- Program-level: Publish a quarterly culture scorecard: maturity trend, proactive behaviors, incident trend, and top improvement actions.
+
+Top ROI Priority Departments (highest risk_priority):
+- Sales (risk_priority=27.98)
+- Operations (risk_priority=25.83)
+- Finance (risk_priority=20.66)
+
+Saved: integrated_recommendations.txt
+
+
+-rw-r--r-- 1 toor toor 120K Feb 20 13:35 behavioral_trends.png
+-rw-r--r-- 1 toor toor  85K Feb 20 13:33 compliance_trends.png
+-rw-r--r-- 1 toor toor  62K Feb 20 13:33 correlation_heatmap.png
+-rw-r--r-- 1 toor toor  58K Feb 20 13:33 dept_comparison.png
+-rw-r--r-- 1 toor toor 140K Feb 20 13:36 executive_dashboard.png
+-rw-r--r-- 1 toor toor  95K Feb 20 13:36 incident_correlation.png
+-rw-r--r-- 1 toor toor 155K Feb 20 13:36 maturity_progression.png
+
+
+-rw-r--r-- 1 toor toor 6.2K Feb 20 13:33 compliance_report.txt
+-rw-r--r-- 1 toor toor 5.8K Feb 20 13:35 impact_report.txt
+-rw-r--r-- 1 toor toor 1.2K Feb 20 13:36 integrated_recommendations.txt
