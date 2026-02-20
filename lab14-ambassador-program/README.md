@@ -25,6 +25,44 @@ By the end of this lab, I was able to:
 
 ---
 
+## 📁 Repository Structure
+
+lab14-ambassador-program/
+│
+├── frameworks/
+│   ├── ambassador_role.md
+│   └── program_framework.md
+│
+├── reports/
+│   ├── executive_summary.txt
+│   ├── metrics.json
+│   ├── program_metrics.md
+│   ├── quarterly_report_template.md
+│   └── survey_analysis_report.txt
+│
+├── scripts/
+│   └── analysis/
+│       ├── metrics_dashboard.py
+│       ├── program_tracker.py
+│       └── survey_analyzer.py
+│
+├── training/
+│   ├── ambassador_assessment.json
+│   ├── training_curriculum.md
+│   └── training_resources.md
+│
+├── surveys/
+│   ├── survey_deployment_guide.md
+│   └── survey_questions.json
+│
+├── README.md
+├── commands.sh
+├── interview_qna.md
+├── output.txt
+└── troubleshooting.md
+
+---
+
 ## 🧩 Lab Tasks Overview
 
 ### Task 1: Design the Ambassador Program Structure
@@ -93,7 +131,7 @@ Security teams can’t scale culture change alone. Ambassador programs extend se
 
 ---
 
-## ✅ Results (High-Level)
+## ✅ Results
 This lab resulted in a complete ambassador program toolkit:
 - Candidate identification system
 - Activity tracking + metrics dashboards
