@@ -1,0 +1,345 @@
+============================================================
+Lab 18: Communication Strategies for Security Culture
+Environment: Ubuntu 22.04 | Python 3.10
+============================================================
+
+------------------------------------------------------------
+Task 1 — Project Structure Creation
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~$ mkdir -p ~/security-communication-lab/{golden-circle,templates,scripts,logs,data}
+student@ip-172-31-14-221:~$ cd ~/security-communication-lab
+student@ip-172-31-14-221:~/security-communication-lab$ tree -d
+
+.
+├── data
+├── golden-circle
+├── logs
+├── scripts
+└── templates
+
+5 directories
+
+Directory structure successfully created.
+
+
+------------------------------------------------------------
+Golden Circle Framework Execution
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 golden-circle/security_golden_circle.py
+
+Executive Message Preview:
+
+EXECUTIVE SECURITY CULTURE BRIEF
+============================================================
+Generated: 2026-02-20
+
+WHY THIS MATTERS (Strategic Purpose)
+------------------------------------------------------------
+• Cybersecurity is essential to protect company assets and customer trust.
+• Human behavior remains the primary source of security incidents.
+• A strong security culture reduces financial and reputational risk.
+
+HOW WE EXECUTE (Strategic Approach)
+------------------------------------------------------------
+• Deliver ongoing security awareness training programs.
+• Implement phishing simulations and real-world exercises.
+• Provide clear communication and reporting channels.
+
+WHAT WE DELIVER (Measurable Outcomes)
+------------------------------------------------------------
+• Reduced phishing click rates by 40%.
+• Improved compliance scores to 92%.
+• Decreased reported incidents by 30% year-over-year.
+
+Strategic Impact:
+• Reduced cyber risk exposure
+• Improved compliance posture
+• Increased operational resilience
+• Measurable ROI from security investments
+...
+
+Employee Message Preview:
+
+SECURITY CULTURE UPDATE
+============================================================
+Generated: 2026-02-20
+
+WHY IT MATTERS TO YOU
+------------------------------------------------------------
+• Cybersecurity is essential to protect company assets and customer trust.
+• Human behavior remains the primary source of security incidents.
+• A strong security culture reduces financial and reputational risk.
+
+HOW WE MAKE IT EASY
+------------------------------------------------------------
+• Deliver ongoing security awareness training programs.
+• Implement phishing simulations and real-world exercises.
+• Provide clear communication and reporting channels.
+...
+
+Messages saved in data/ directory.
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la data/
+
+total 16
+-rw-r--r-- 1 student student 1789 Feb 20 10:21 executive_message.txt
+-rw-r--r-- 1 student student 1654 Feb 20 10:21 employee_message.txt
+
+
+------------------------------------------------------------
+Communication Plan Generator
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 templates/communication_plan.py
+
+Communication Plan Summary:
+audience_count: 3
+channel_count: 4
+scheduled_messages: 36
+success_metrics: 4
+
+Plan saved to data/communication_plan.json
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la data/
+
+-rw-r--r-- 1 student student 5478 Feb 20 10:23 communication_plan.json
+-rw-r--r-- 1 student student 1789 Feb 20 10:21 executive_message.txt
+-rw-r--r-- 1 student student 1654 Feb 20 10:21 employee_message.txt
+
+
+------------------------------------------------------------
+Email Configuration & Simulated Sender
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 scripts/email_config.py
+
+======================================================================
+SIMULATED EMAIL SEND
+======================================================================
+From: Security Team <security-team@company.local>
+To: ceo@company.local
+Subject: Test Security Communication
+----------------------------------------------------------------------
+This is a simulated test email from the security communication system.
+======================================================================
+
+======================================================================
+SIMULATED EMAIL SEND
+======================================================================
+From: Security Team <security-team@company.local>
+To: manager1@company.local
+Subject: Test Security Communication
+----------------------------------------------------------------------
+This is a simulated test email from the security communication system.
+======================================================================
+
+======================================================================
+SIMULATED EMAIL SEND
+======================================================================
+From: Security Team <security-team@company.local>
+To: employee1@company.local
+Subject: Test Security Communication
+----------------------------------------------------------------------
+This is a simulated test email from the security communication system.
+======================================================================
+
+Saved email log to logs/email_log.json
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la logs/
+
+-rw-r--r-- 1 student student 1468 Feb 20 10:25 email_log.json
+
+
+------------------------------------------------------------
+Email Templates Generation
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 scripts/email_templates.py
+
+Sample emails created in templates/ directory:
+ - templates/sample_executive.html
+ - templates/sample_manager.html
+ - templates/sample_employee.html
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la templates/
+
+-rw-r--r-- 1 student student 2680 Feb 20 10:27 sample_executive.html
+-rw-r--r-- 1 student student 2211 Feb 20 10:27 sample_manager.html
+-rw-r--r-- 1 student student 2098 Feb 20 10:27 sample_employee.html
+
+
+------------------------------------------------------------
+Email Scheduler Execution
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab/scripts$ python3 email_scheduler.py
+
+Saved schedule to data/email_schedule.json
+
+======================================================================
+SIMULATED EMAIL SEND
+======================================================================
+From: Security Team <security-team@company.local>
+To: ceo@company.local
+Subject: Security Culture ROI Report - February 2026
+----------------------------------------------------------------------
+Executive Security Update WHY This Matters Risk Reduction: 30% Cost Savings: $100000 ...
+======================================================================
+
+... (additional simulated sends omitted for brevity in console)
+
+Processed due emails. Sent batches: 7
+
+Schedule Summary:
+{
+  "total_scheduled": 84,
+  "by_audience": {
+    "executive": 12,
+    "manager": 24,
+    "employee": 48
+  },
+  "sent": 7,
+  "pending": 77
+}
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la data/
+
+communication_plan.json
+communication_metrics.json
+email_config.json
+email_schedule.json
+executive_message.txt
+employee_message.txt
+
+
+------------------------------------------------------------
+Communication Metrics Execution
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 scripts/communication_metrics.py
+
+COMMUNICATION METRICS REPORT
+============================================================
+{
+  "emails_sent": 80,
+  "emails_opened": 44,
+  "links_clicked": 27,
+  "overall_engagement_rate_percent": 88.75
+}
+
+Audience Breakdown:
+{
+  "executive": {
+    "sent": 5,
+    "opened": 4,
+    "clicked": 2,
+    "engagement_rate_percent": 120.0,
+    "link_types": {
+      "roi_report": 2
+    }
+  },
+  "manager": {
+    "sent": 15,
+    "opened": 10,
+    "clicked": 5,
+    "engagement_rate_percent": 100.0,
+    "link_types": {
+      "toolkit": 5
+    }
+  },
+  "employee": {
+    "sent": 60,
+    "opened": 30,
+    "clicked": 20,
+    "engagement_rate_percent": 83.33,
+    "link_types": {
+      "training_module": 20
+    }
+  }
+}
+
+Saved metrics to data/communication_metrics.json
+
+
+------------------------------------------------------------
+Communication Dashboard
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ python3 scripts/communication_dashboard.py
+
+======================================================================
+SECURITY COMMUNICATION DASHBOARD
+======================================================================
+Generated: 2026-02-20 10:55:33
+----------------------------------------------------------------------
+Total Emails Sent   : 80
+Total Emails Opened : 44
+Total Links Clicked : 27
+Overall Engagement  : 88.75%
+----------------------------------------------------------------------
+
+Upcoming Scheduled Emails (Next 5):
+  - 2026-02-21 | manager | recipients=2
+  - 2026-02-21 | employee | recipients=3
+  - 2026-02-28 | employee | recipients=3
+
+======================================================================
+AUDIENCE BREAKDOWN
+======================================================================
+
+Audience: EXECUTIVE
+Sent      : 5
+Opened    : 4
+Clicked   : 2
+Engagement: 120.0%
+
+Audience: MANAGER
+Sent      : 15
+Opened    : 10
+Clicked   : 5
+Engagement: 100.0%
+
+Audience: EMPLOYEE
+Sent      : 60
+Opened    : 30
+Clicked   : 20
+Engagement: 83.33%
+
+======================================================================
+RECOMMENDATIONS
+======================================================================
+• Overall engagement is HIGH. Continue refining targeted improvements.
+• Executives: Engagement healthy. Add quarterly strategic insights.
+• Managers: Engagement strong. Add team challenges and recognition.
+• Employees: Maintain weekly tips and add micro-quizzes.
+
+Suggested next steps:
+1) Review subject lines for clarity.
+2) Test shorter vs longer message versions.
+3) Align messages with active risk themes (phishing, MFA, passwords).
+
+------------------------------------------------------------
+Final Verification
+------------------------------------------------------------
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la data/
+communication_plan.json
+communication_metrics.json
+email_config.json
+email_schedule.json
+executive_message.txt
+employee_message.txt
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la logs/
+email_log.json
+
+student@ip-172-31-14-221:~/security-communication-lab$ ls -la templates/
+sample_executive.html
+sample_manager.html
+sample_employee.html
+
+============================================================
+Lab 18 Completed Successfully
+============================================================
