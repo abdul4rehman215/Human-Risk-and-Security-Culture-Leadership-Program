@@ -1,0 +1,34 @@
+framework:
+  name: "Security Maturity Benchmark"
+  version: "1.0"
+
+domains:
+  governance:
+    weight: 0.25
+    description: "Security governance and leadership"
+  risk_management:
+    weight: 0.20
+    description: "Risk assessment and management"
+  incident_response:
+    weight: 0.15
+    description: "Incident handling capabilities"
+  awareness:
+    weight: 0.15
+    description: "Security training programs"
+  technical_controls:
+    weight: 0.25
+    description: "Technical security measures"
+
+maturity_levels:
+  1: "Initial - Ad-hoc processes"
+  2: "Developing - Basic processes"
+  3: "Defined - Documented standards"
+  4: "Managed - Measured processes"
+  5: "Optimized - Continuous improvement"
+
+scoring:
+  thresholds:
+    critical: 60
+    moderate: 75
+    good: 85
+    excellent: 95
