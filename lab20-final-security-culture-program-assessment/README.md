@@ -116,7 +116,7 @@ Packages everything into:
 
 ---
 
-## 📁 Repository Structure (Expected)
+## 📁 Repository Structure
 
 ```text
 lab20-final-security-culture-program-assessment/
