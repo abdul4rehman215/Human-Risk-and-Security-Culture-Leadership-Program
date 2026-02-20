@@ -1,0 +1,21 @@
+SECURITY CULTURE ASSESSMENT - EXECUTIVE SUMMARY
+================================================
+Program: Security Culture Program
+Organization: Sample Organization
+Assessment Period: 2024-Q1
+Assessment Date: February 20, 2026
+
+OVERALL RESULT
+--------------
+Overall Maturity Level: Managed
+Overall Score: 76.84%
+
+CATEGORY SCORES
+--------------
+- Awareness  : 74.91%
+- Behavior   : 72.36%
+- Culture    : 81.44%
+- Outcomes   : 78.27%
+KEY FINDINGS
+------------
+- Category scores show strengths and weaknesses across awareness, behavior, culture, and outcomes.
