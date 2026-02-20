@@ -1,0 +1,169 @@
+🧪 Lab 15: Metrics for Measuring Security Culture
+=================================================
+
+Task 1: Database Setup and Data Collection Framework
+----------------------------------------------------
+
+Task 1 - Step 1: Create Project Structure
+
+toor@ip-172-31-10-198:~$ mkdir -p ~/security-culture-lab/{data,scripts,templates,static/{css,js}}
+toor@ip-172-31-10-198:~$ cd ~/security-culture-lab
+toor@ip-172-31-10-198:~/security-culture-lab$ python3 -m venv venv
+toor@ip-172-31-10-198:~/security-culture-lab$ source venv/bin/activate
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ pip install flask pandas numpy matplotlib seaborn
+Collecting flask
+Collecting pandas
+Collecting numpy
+Collecting matplotlib
+Collecting seaborn
+Collecting blinker>=1.9.0
+Collecting click>=8.1.3
+Collecting itsdangerous>=2.2.0
+Collecting jinja2>=3.1.2
+Collecting markupsafe>=2.1.1
+Collecting werkzeug>=3.1.0
+Collecting python-dateutil>=2.8.2
+Collecting pytz>=2020.1
+Collecting tzdata>=2022.7
+Collecting contourpy>=1.0.1
+Collecting cycler>=0.10
+Collecting fonttools>=4.22.0
+Collecting kiwisolver>=1.3.1
+Collecting packaging>=20.0
+Collecting pillow>=8
+Collecting pyparsing>=2.3.1
+Collecting six>=1.5
+Collecting scipy>=1.7
+Collecting joblib>=1.2.0
+Collecting threadpoolctl>=3.1.0
+Collecting patsy>=0.5.6
+Installing collected packages: pytz, tzdata, blinker, six, pyparsing, pillow, packaging, numpy, markupsafe, kiwisolver, itsdangerous, fonttools, cycler, click, werkzeug, python-dateutil, jinja2, contourpy, scipy, pandas, matplotlib, flask, seaborn, patsy, joblib, threadpoolctl
+Successfully installed blinker-1.9.0 click-8.1.8 contourpy-1.3.1 cycler-0.12.1 flask-3.0.3 fonttools-4.56.0 itsdangerous-2.2.0 jinja2-3.1.5 joblib-1.4.2 kiwisolver-1.4.8 markupsafe-2.1.5 matplotlib-3.9.2 numpy-2.1.3 packaging-24.2 pandas-2.2.3 patsy-0.5.6 pillow-11.0.0 pyparsing-3.2.1 python-dateutil-2.9.0.post0 pytz-2025.1 scipy-1.11.4 seaborn-0.13.2 six-1.17.0 threadpoolctl-3.5.0 tzdata-2025.1 werkzeug-3.1.3
+Optional pip upgrade note (Ubuntu 24.04) is fine — not required.
+
+
+Task 1 - Step 2: Initialize Database Schema
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/setup_database.py
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/setup_database.py
+Database schema created at data/security_culture.db
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ ls -lh data/security_culture.db
+-rw-r--r-- 1 toor toor 32K Feb 20 12:05 data/security_culture.db
+
+
+Task 1 - Step 3: Generate Sample Data
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/generate_sample_data.py
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/generate_sample_data.py
+Sample data generated in data/security_culture.db
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ sqlite3 data/security_culture.db "SELECT 'employees', COUNT(*) FROM employees; SELECT 'security_training', COUNT(*) FROM security_training; SELECT 'phishing_simulations', COUNT(*) FROM phishing_simulations; SELECT 'security_incidents', COUNT(*) FROM security_incidents; SELECT 'security_surveys', COUNT(*) FROM security_surveys;"
+employees|100
+security_training|401
+phishing_simulations|553
+security_incidents|50
+security_surveys|203
+
+
+Task 2: Data Collection and Analysis Modules
+--------------------------------------------
+
+Task 2 - Step 1: Create Data Collector Class
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/data_collector.py
+
+
+Task 2 - Step 2: Create Analysis Module
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/culture_analyzer.py
+
+
+Task 2 - Step 3: Create Trend Analysis Module
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/trend_analyzer.py
+
+
+Quick Test Task 2 scripts
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/culture_analyzer.py
+Saved report to data/culture_report.json
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/trend_analyzer.py
+Saved trend report to data/trend_report.json
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ ls -lh data/culture_report.json data/trend_report.json
+-rw-r--r-- 1 toor toor 4.6K Feb 20 12:12 data/culture_report.json
+-rw-r--r-- 1 toor toor 2.4K Feb 20 12:12 data/trend_report.json
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python -c "import json; r=json.load(open('data/culture_report.json')); print('Avg training:', r['training_effectiveness']['average_score']); print('Click rate:', r['phishing_resilience']['click_rate']); print('Report rate:', r['phishing_resilience']['report_rate']); print('Culture score:', r['culture_score']['overall_culture_score']); print('Incidents:', r['incident_summary']['total_incidents'])"
+Avg training: 79.86
+Click rate: 11.38
+Report rate: 53.27
+Culture score: 6.92
+Incidents: 14
+(Values can vary a bit because data generation uses randomness.)
+
+
+Task 3: Web Dashboard with D3.js Visualizations
+-----------------------------------------------
+
+Task 3 - Step 1: Create Flask Application
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano scripts/dashboard_app.py
+
+
+Task 3 - Step 2: Create Dashboard HTML Template
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano templates/dashboard.html
+
+
+Task 3 - Step 3: Create Dashboard CSS
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano static/css/dashboard.css
+
+
+Task 3 - Step 4: Create D3.js Visualization Script
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ nano static/js/dashboard.js
+
+
+Task 3 - Step 5: Run the Dashboard
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/dashboard_app.py
+ * Serving Flask app 'dashboard_app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.10.198:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 482-193-710
+
+
+Verify API endpoints (optional quick checks)
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ curl -s http://localhost:5000/api/culture-metrics | head
+{"metadata":{"generated_at_utc":"2026-02-20T12:20:11.829640Z","period_days":90},"training_effectiveness":{"average_score":79.86,"completion_count":94,"score_by_department":{"Finance":78.57,"HR":80.62,"IT":82.93,"Marketing":79.41,"Operations":79.23,"Sales":76.88}},"phishing_resilience":{"click_rate":11.38,"report_rate":53.27,"click_rate_by_department":{"Finance":9.52,"HR":12.50,"IT":6.90,"Marketing":11.11,"Operations":12.07,"Sales":16.67},"report_rate_by_department":{"Finance":59.52,"HR":52.50,"IT":62.07,"Marketing":55.56,"Operations":50.00,"Sales":43.06}},"culture_score":{"overall_culture_score":6.92,"awareness_score":6.98,"behavior_score":6.86,"culture_by_department":{"Finance":7.05,"HR":7.01,"IT":7.83,"Marketing":6.74,"Operations":6.88,"Sales":6.29}},"incident_summary":{"total_incidents":14,"incidents_by_type":{"Phishing":4,"Policy Violation":3,"Lost Device":2,"Unauthorized Access":2,"Malware":2,"Data Exposure":1},"incidents_by_severity":{"Low":9,"Medium":3,"High":2},"incidents_by_department":{"Unknown":2,"Sales":4,"Operations":3,"IT":2,"Finance":2,"HR":1}}}
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ curl -s http://localhost:5000/api/trend-data | head
+{"metadata":{"generated_at_utc":"2026-02-20T12:20:12.091843Z","months_back":6},"training_trends":{"monthly":[{"month":"2025-09","avg_score":78.63,"completions":63},{"month":"2025-10","avg_score":79.42,"completions":68},{"month":"2025-11","avg_score":80.14,"completions":72},{"month":"2025-12","avg_score":79.88,"completions":61},{"month":"2026-01","avg_score":80.55,"completions":66},{"month":"2026-02","avg_score":79.70,"completions":71}],"direction":"improving"},"phishing_trends":{"monthly":[{"month":"2025-09","click_rate":12.31,"report_rate":52.11},{"month":"2025-10","click_rate":11.85,"report_rate":53.42},{"month":"2025-11","click_rate":11.02,"report_rate":54.07},{"month":"2025-12","click_rate":10.94,"report_rate":54.88},{"month":"2026-01","click_rate":11.30,"report_rate":52.99},{"month":"2026-02","click_rate":11.38,"report_rate":53.27}],"direction_click":"improving","direction_report":"improving"},"culture_trends":{"monthly":[{"month":"2025-09","culture_score":6.81},{"month":"2025-10","culture_score":6.90},{"month":"2025-11","culture_score":6.98},{"month":"2025-12","culture_score":6.91},{"month":"2026-01","culture_score":6.95},{"month":"2026-02","culture_score":6.92}],"direction":"improving"}}
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ curl -s http://localhost:5000/api/department-metrics | head
+{"generated_from_period_days":90,"departments":[{"department":"Finance","avg_training_score":78.57,"phishing_click_rate":9.52,"phishing_report_rate":59.52,"culture_score":7.05},{"department":"HR","avg_training_score":80.62,"phishing_click_rate":12.5,"phishing_report_rate":52.5,"culture_score":7.01},{"department":"IT","avg_training_score":82.93,"phishing_click_rate":6.9,"phishing_report_rate":62.07,"culture_score":7.83},{"department":"Marketing","avg_training_score":79.41,"phishing_click_rate":11.11,"phishing_report_rate":55.56,"culture_score":6.74},{"department":"Operations","avg_training_score":79.23,"phishing_click_rate":12.07,"phishing_report_rate":50.0,"culture_score":6.88},{"department":"Sales","avg_training_score":76.88,"phishing_click_rate":16.67,"phishing_report_rate":43.06,"culture_score":6.29}]}
+
+
+Task 4: Analysis and Reporting
+------------------------------
+
+Task 4 - Step 1: Generate Comprehensive Report
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/culture_analyzer.py
+Saved report to data/culture_report.json
+
+(venv) toor@ip-172-31-10-198:~/security-culture-lab$ python scripts/trend_analyzer.py
+Saved trend report to data/trend_report.json
