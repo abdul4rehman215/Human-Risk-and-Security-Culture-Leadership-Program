@@ -1,0 +1,143 @@
+toor@ip-172-31-18-204:~$ mkdir -p ~/security_culture_assessment/{data,reports,scripts}
+
+toor@ip-172-31-18-204:~$ cd ~/security_culture_assessment
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -la
+total 16
+drwxr-xr-x  5 toor toor 4096 Feb 20 13:02 .
+drwxr-x--- 20 toor toor 4096 Feb 20 13:02 ..
+drwxr-xr-x  2 toor toor 4096 Feb 20 13:02 data
+drwxr-xr-x  2 toor toor 4096 Feb 20 13:02 reports
+drwxr-xr-x  2 toor toor 4096 Feb 20 13:02 scripts
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ python3 scripts/generate_data.py
+[+] Created data/training_metrics.json
+[+] Created data/phishing_metrics.json
+[+] Created data/incident_metrics.json
+[+] Created data/compliance_metrics.json
+[+] Created data/culture_metrics.json
+[+] Created data/survey_responses.json
+
+All assessment datasets generated successfully!
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -l data/
+total 88
+-rw-r--r-- 1 toor toor   242 Feb 20 13:05 compliance_metrics.json
+-rw-r--r-- 1 toor toor   328 Feb 20 13:05 culture_metrics.json
+-rw-r--r-- 1 toor toor   412 Feb 20 13:05 incident_metrics.json
+-rw-r--r-- 1 toor toor   376 Feb 20 13:05 phishing_metrics.json
+-rw-r--r-- 1 toor toor 46218 Feb 20 13:05 survey_responses.json
+-rw-r--r-- 1 toor toor   356 Feb 20 13:05 training_metrics.json
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ python3 scripts/assessment_analyzer.py
+Loading assessment data...
+Calculating category scores...
+[+] Saved assessment results to reports/assessment_results.json
+
+Assessment complete: Managed (76.84%)
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -l reports/
+total 12
+-rw-r--r-- 1 toor toor 5438 Feb 20 13:09 assessment_results.json
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ cat reports/assessment_results.json | head -40
+{
+  "assessment_date": "2026-02-20T13:09:44.612381",
+  "assessment_metadata": {
+    "program_name": "Security Culture Program",
+    "organization": "Sample Organization",
+    "assessment_period": "2024-Q1",
+    "assessment_version": "1.0",
+    "assessment_date": "2026-02-20"
+  },
+  "weights": {
+    "awareness": 0.25,
+    "behavior": 0.3,
+    "culture": 0.25,
+    "outcomes": 0.2
+  },
+  "category_scores": {
+    "awareness": 74.91,
+    "behavior": 72.36,
+    "culture": 81.44,
+    "outcomes": 78.27
+  },
+  "overall_score": 76.84,
+  "maturity_level": "Managed",
+  "recommendations": [
+...
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ python3 scripts/report_generator.py
+Loading assessment results...
+Generating visualizations...
+[+] Saved bar chart: reports/maturity_scores.png
+[+] Saved radar chart: reports/maturity_radar.png
+Generating text reports...
+[+] Saved executive summary: reports/executive_summary.txt
+[+] Saved detailed report: reports/detailed_report.txt
+
+Reports generated in reports
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -l reports/
+total 224
+-rw-r--r-- 1 toor toor   5438 Feb 20 13:09 assessment_results.json
+-rw-r--r-- 1 toor toor   1964 Feb 20 13:12 executive_summary.txt
+-rw-r--r-- 1 toor toor   5486 Feb 20 13:12 detailed_report.txt
+-rw-r--r-- 1 toor toor  65234 Feb 20 13:12 maturity_scores.png
+-rw-r--r-- 1 toor toor  80412 Feb 20 13:12 maturity_radar.png
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ python3 scripts/presentation_summary.py
+[+] Saved: reports/presentation_outline.txt
+[+] Saved: reports/presentation_talking_points.txt
+
+--- Presentation Outline Preview (first 30 lines) ---
+SECURITY CULTURE ASSESSMENT PRESENTATION
+=========================================
+SLIDE 1: Title Slide
+- Security Culture Program Assessment
+- Assessment Period: 2024-Q1
+- Organization: Sample Organization
+- Presented by: [YOUR NAME]
+... (preview truncated) ...
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -l reports/ | grep presentation
+-rw-r--r-- 1 toor toor  2576 Feb 20 13:15 presentation_outline.txt
+-rw-r--r-- 1 toor toor  3298 Feb 20 13:15 presentation_talking_points.txt
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ python3 scripts/package_deliverables.py
+[+] Deliverables folder created: /home/toor/security_culture_assessment/deliverables/security_culture_assessment_20260220_131820
+[+] ZIP archive created: /home/toor/security_culture_assessment/deliverables/security_culture_assessment_20260220_131820.zip
+Deliverables packaged successfully
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -lh deliverables/
+drwxr-xr-x 5 toor toor 4.0K Feb 20 13:18 security_culture_assessment_20260220_131820
+-rw-r--r-- 1 toor toor 188K Feb 20 13:18 security_culture_assessment_20260220_131820.zip
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ find deliverables -maxdepth 2 -type d
+deliverables
+deliverables/security_culture_assessment_20260220_131820
+deliverables/security_culture_assessment_20260220_131820/reports
+deliverables/security_culture_assessment_20260220_131820/data
+deliverables/security_culture_assessment_20260220_131820/scripts
+
+
+toor@ip-172-31-18-204:~/security_culture_assessment$ ls -l deliverables/*/reports/
+assessment_results.json
+executive_summary.txt
+detailed_report.txt
+maturity_scores.png
+maturity_radar.png
+presentation_outline.txt
+presentation_talking_points.txt
