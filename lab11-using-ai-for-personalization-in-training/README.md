@@ -1,4 +1,4 @@
-# 🧪 Lab 11 – Using AI for Personalization in Training (Ubuntu 24.04)
+# 🧪 Lab 11 – Using AI for Personalization in Training
 
 ## 📌 Overview
 
