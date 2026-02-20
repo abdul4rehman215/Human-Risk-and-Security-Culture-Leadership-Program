@@ -1,0 +1,6 @@
+Employee_ID,Department,Training_Date,Pre_Score,Post_Score,Phishing_Test_1,Phishing_Test_2,Phishing_Test_3,Password_Compliance,MFA_Enabled,Incident_Reports,Behavior_Score,Risk_Level
+EMP001,IT,2024-01-15,35,82,Failed,Passed,Passed,Yes,Yes,1,7.5,Low
+EMP002,HR,2024-01-15,28,88,Failed,Failed,Passed,Yes,Yes,0,8.2,Low
+EMP003,Finance,2024-01-16,42,68,Passed,Passed,Passed,No,No,2,5.8,Medium
+EMP004,Marketing,2024-01-16,18,92,Failed,Passed,Passed,Yes,Yes,0,8.9,Low
+EMP005,Operations,2024-01-17,38,52,Failed,Failed,Failed,No,No,4,3.1,High
