@@ -1,0 +1,11 @@
+organization:
+  name: "TechCorp Inc"
+  industry: "Technology"
+  date: "2024-01-15"
+
+responses:
+  governance: [3, 4]
+  risk_management: [3, 2]
+  incident_response: [3, 2]
+  awareness: [4, 3]
+  technical_controls: [4, 3]
