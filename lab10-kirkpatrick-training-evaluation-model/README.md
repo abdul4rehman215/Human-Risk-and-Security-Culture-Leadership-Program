@@ -133,6 +133,31 @@ All statistical calculations are automated and reproducible.
 
 ---
 
+# 📊 Visualization Outputs
+
+The lab generates:
+
+- Reaction distribution histogram
+- Pre vs Post scatter comparison
+- Incident reduction bar chart
+- Business impact by department
+- Department comparison dashboard
+
+--- 
+
+# 📊 Business Impact Summary
+
+| Level    | Outcome                               |
+| -------- | ------------------------------------- |
+| Reaction | Strong satisfaction                   |
+| Learning | Statistically significant improvement |
+| Behavior | 66.7% reduction in incidents          |
+| Results  | 4433% ROI                             |
+
+The training demonstrates measurable and financially validated effectiveness.
+
+---
+
 # 🚀 How to Run
 
 ## 1️⃣ Clone or Navigate
@@ -173,30 +198,6 @@ python3 scripts/custom_analysis.py
 
 ---
 
-# 📊 Visualization Outputs
-
-The lab generates:
-
-- Reaction distribution histogram
-- Pre vs Post scatter comparison
-- Incident reduction bar chart
-- Business impact by department
-- Department comparison dashboard
-
---- 
-
-# 📊 Business Impact Summary
-
-| Level    | Outcome                               |
-| -------- | ------------------------------------- |
-| Reaction | Strong satisfaction                   |
-| Learning | Statistically significant improvement |
-| Behavior | 66.7% reduction in incidents          |
-| Results  | 4433% ROI                             |
-
-The training demonstrates measurable and financially validated effectiveness.
-
----
 
 # 💼 Real-World Relevance
 
@@ -283,6 +284,8 @@ It mirrors real-world L&D analytics workflows used in enterprise environments.
 ---
 
 # 👨‍💻 Author
+
+Abdul Rehman
 
 Human Risk & Security Culture Leadership Program  
 Lab Series – Advanced Training Evaluation
