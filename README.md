@@ -13,7 +13,7 @@
 ![OS](https://img.shields.io/badge/OS-Ubuntu%2024.04-orange?style=for-the-badge&logo=ubuntu)
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Dashboard-black?style=for-the-badge&logo=flask)
-![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey?style=for-the-badge&logo=sqlite)
+![SQLite](https://img.shields.io/badge/Database-SQLite-blue?style=for-the-badge&logo=sqlite)
 ![Dash](https://img.shields.io/badge/Dash-Interactive%20Analytics-darkblue?style=for-the-badge&logo=plotly)
 ![FFmpeg](https://img.shields.io/badge/FFmpeg-Media%20Pipeline-red?style=for-the-badge&logo=ffmpeg)
 ![OBS](https://img.shields.io/badge/OBS-Studio-black?style=for-the-badge&logo=obsstudio)
@@ -32,6 +32,14 @@
 ![Labs](https://img.shields.io/badge/Labs-20%20Hands--On-brightgreen?style=for-the-badge)
 ![Level](https://img.shields.io/badge/Level-Intermediate%20→%20Advanced-blueviolet?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
+<!-- ================= REPO METADATA ================= -->
+
+![Repo Size](https://img.shields.io/github/repo-size/abdul4rehman215/Human-Risk-and-Security-Culture-Leadership-Program?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/abdul4rehman215/Human-Risk-and-Security-Culture-Leadership-Program?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/abdul4rehman215/Human-Risk-and-Security-Culture-Leadership-Program?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/abdul4rehman215/Human-Risk-and-Security-Culture-Leadership-Program?style=for-the-badge)
+
 
 </div>
 
