@@ -1,0 +1,154 @@
+toor@ip-172-31-10-173:~$ sudo apt update && sudo apt install -y python3-pip python3-venv
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [110 kB]
+Fetched 110 kB in 1s (155 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+All packages are up to date.
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+python3-pip is already the newest version (24.0+dfsg-1ubuntu1).
+python3-venv is already the newest version (3.12.3-0ubuntu1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+toor@ip-172-31-10-173:~$ mkdir -p ~/security-benchmark && cd ~/security-benchmark
+toor@ip-172-31-10-173:~/security-benchmark$ python3 -m venv venv
+toor@ip-172-31-10-173:~/security-benchmark$ source venv/bin/activate
+(venv) toor@ip-172-31-10-173:~/security-benchmark$
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ pip install pandas pyyaml matplotlib seaborn
+Collecting pandas
+Collecting pyyaml
+Collecting matplotlib
+Collecting seaborn
+Collecting numpy>=1.26.0 (from pandas)
+Collecting python-dateutil>=2.8.2 (from pandas)
+Collecting pytz>=2020.1 (from pandas)
+Collecting tzdata>=2022.7 (from pandas)
+Collecting contourpy>=1.0.1 (from matplotlib)
+Collecting cycler>=0.10 (from matplotlib)
+Collecting fonttools>=4.22.0 (from matplotlib)
+Collecting kiwisolver>=1.3.1 (from matplotlib)
+Collecting packaging>=20.0 (from matplotlib)
+Collecting pillow>=8 (from matplotlib)
+Collecting pyparsing>=2.3.1 (from matplotlib)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+
+Installing collected packages: pytz, tzdata, six, pyyaml, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, contourpy, python-dateutil, matplotlib, pandas, seaborn
+Successfully installed contourpy-1.2.1 cycler-0.12.1 fonttools-4.53.1 kiwisolver-1.4.5 matplotlib-3.9.2 numpy-2.0.1 packaging-24.1 pandas-2.2.2 pillow-10.4.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 pytz-2024.1 pyyaml-6.0.2 seaborn-0.13.2 six-1.16.0 tzdata-2024.1
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ pip freeze > requirements.txt
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ mkdir -p config data scripts reports
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ chmod +x scripts/*.py
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ python3 scripts/run_benchmark.py data/sample_responses.yaml
+Security Program Benchmarking Tool
+==================================================
+
+[RESULTS]
+Organization: TechCorp Inc
+Overall Score: 63.9%
+Maturity Level: 2 - Developing - Basic processes
+
+Domain Scores:
+- governance: 72.0%
+- risk_management: 50.0%
+- incident_response: 52.0%
+- awareness: 74.0%
+- technical_controls: 68.0%
+
+[INFO] Outputs generated:
+ - reports/domain_scores.png
+ - reports/assessment_report.md
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ cat reports/assessment_report.md
+# Security Program Benchmark Assessment Report
+
+**Generated:** 2026-02-19T12:11:04.318475
+
+## Organization Information
+- Name: **TechCorp Inc**
+- Industry: **Technology**
+- Assessment Date: **2024-01-15**
+
+## Executive Summary
+- Overall Score: **63.90%**
+- Maturity Level: **2 - Developing - Basic processes**
+
+## Domain Scores
+
+| Domain | Score (%) |
+|---|---:|
+| governance | 72.00 |
+| risk_management | 50.00 |
+| incident_response | 52.00 |
+| awareness | 74.00 |
+| technical_controls | 68.00 |
+
+## Recommendations
+- [risk_management] Formalize risk assessment cadence and risk treatment tracking (gap 50.0%).
+- [incident_response] Update IR plan, run tabletop exercises, and define IR roles (gap 48.0%).
+
+## Notes
+- Scores are computed from weighted questions (1-5) normalized to percentages.
+- Overall score is weighted by domain importance from the framework config.
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ python3 scripts/interactive_assessment.py
+Organization name: DemoOrg Ltd
+Industry: Technology
+Organization size (e.g., 50, 200, 1000): 200
+
+============================================================
+Domain: governance
+Description: Security governance and leadership
+Rate each question from 1 to 5 (1=low maturity, 5=high maturity)
+============================================================
+1. Is there a documented security policy? (1-5): 3
+2. Is there executive security leadership? (1-5): 4
+
+============================================================
+Domain: risk_management
+Description: Risk assessment and management
+Rate each question from 1 to 5 (1=low maturity, 5=high maturity)
+============================================================
+1. Are risk assessments conducted regularly? (1-5): 3
+2. Is there a risk treatment process? (1-5): 2
+
+============================================================
+Domain: incident_response
+Description: Incident handling capabilities
+Rate each question from 1 to 5 (1=low maturity, 5=high maturity)
+============================================================
+1. Does an incident response plan exist? (1-5): 3
+2. Is there a dedicated IR team? (1-5): 2
+
+============================================================
+Domain: awareness
+Description: Security training programs
+Rate each question from 1 to 5 (1=low maturity, 5=high maturity)
+============================================================
+1. Is security training provided annually? (1-5): 4
+2. Are awareness metrics tracked? (1-5): 3
+
+============================================================
+Domain: technical_controls
+Description: Technical security measures
+Rate each question from 1 to 5 (1=low maturity, 5=high maturity)
+============================================================
+1. Are security controls implemented? (1-5): 4
+2. Is continuous monitoring in place? (1-5): 3
+
+[INFO] Responses saved to: data/interactive_responses_20260219_121045.yaml
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ python3 scripts/compare_assessments.py data/sample_responses.yaml data/sample_responses.yaml
+[INFO] Comparison complete.
+[INFO] Trend chart saved: reports/assessment_trend.png
+[INFO] Overall scores: [63.9, 63.9]
+
+(venv) toor@ip-172-31-10-173:~/security-benchmark$ python3 -c "import yaml; print(yaml.safe_load(open('data/sample_responses.yaml')))"
+{'organization': {'name': 'TechCorp Inc', 'industry': 'Technology', 'date': '2024-01-15'}, 'responses': {'governance': [3, 4], 'risk_management': [3, 2], 'incident_response': [3, 2], 'awareness': [4, 3], 'technical_controls': [4, 3]}}
