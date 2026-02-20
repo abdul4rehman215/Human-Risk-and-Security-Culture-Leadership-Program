@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Security Program Benchmarking Analyzer
-Students: Complete the TODO sections
 """
 
 import yaml
