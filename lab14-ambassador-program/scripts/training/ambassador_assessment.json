@@ -1,0 +1,66 @@
+{
+ "assessment_title": "Ambassador Training Assessment",
+ "passing_score": 80,
+ "questions": [
+  {
+   "id": 1,
+   "question": "What are the three key components of security culture?",
+   "type": "multiple_choice",
+   "options": [
+    "Technology, policies, and people",
+    "Values, beliefs, and behaviors",
+    "Training, awareness, and enforcement",
+    "Prevention, detection, and response"
+   ],
+   "correct_answer": 1
+  },
+  {
+   "id": 2,
+   "question": "What is the primary role of a security ambassador?",
+   "type": "multiple_choice",
+   "options": [
+    "Enforce security policies",
+    "Monitor employee behavior",
+    "Educate and support peers",
+    "Report security violations"
+   ],
+   "correct_answer": 2
+  },
+  {
+   "id": 3,
+   "question": "Which communication approach is most effective for behavior change?",
+   "type": "multiple_choice",
+   "options": [
+    "Fear-based messaging",
+    "Technical explanations",
+    "Positive reinforcement and practical examples",
+    "Policy enforcement threats"
+   ],
+   "correct_answer": 2
+  },
+  {
+   "id": 4,
+   "question": "How often should ambassadors conduct awareness activities?",
+   "type": "multiple_choice",
+   "options": [
+    "Daily",
+    "Weekly",
+    "Monthly",
+    "Quarterly"
+   ],
+   "correct_answer": 2
+  },
+  {
+   "id": 5,
+   "question": "What is the best way to measure ambassador program success?",
+   "type": "multiple_choice",
+   "options": [
+    "Number of policy violations",
+    "Employee engagement and behavior change",
+    "Number of training hours",
+    "Security tool adoption rates"
+   ],
+   "correct_answer": 1
+  }
+ ]
+}
