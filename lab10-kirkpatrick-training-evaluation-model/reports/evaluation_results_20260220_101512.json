@@ -1,0 +1,66 @@
+{
+    "timestamp": "2026-02-20T10:15:12",
+    "overall_effectiveness_score": 91.63,
+    "level_breakdown_scores": {
+        "level1_reaction_score_percent": 80.0,
+        "level2_learning_score_percent": 100.0,
+        "level3_behavior_score_percent": 100.0,
+        "level4_results_score_percent": 100.0
+    },
+    "recommendations": [],
+    "detailed_results": {
+        "level1": {
+            "mean_reaction_score": 4.22,
+            "median_reaction_score": 4.3,
+            "std_reaction_score": 0.38,
+            "threshold": 4.0,
+            "participants_above_threshold": 12,
+            "participants_below_threshold": 3,
+            "satisfaction_percent": 80.0
+        },
+        "level2": {
+            "pre_test_avg": 64.4,
+            "post_test_avg": 84.6,
+            "avg_improvement": 20.2,
+            "median_improvement": 20.0,
+            "passing_score": 80,
+            "passing_count": 13,
+            "passing_rate_percent": 86.7,
+            "cohens_d_effect_size": 2.1,
+            "paired_ttest_t_stat": 18.72,
+            "paired_ttest_p_value": 0.00000001,
+            "improvement_mean_ci_95": {
+                "lower": 18.4,
+                "upper": 22.0
+            }
+        },
+        "level3": {
+            "total_incidents_before": 51.0,
+            "total_incidents_after": 17.0,
+            "total_incidents_reduced": 34.0,
+            "overall_reduction_rate": 0.667,
+            "individual_improvement_rate_avg": 0.71,
+            "improvement_categories": {
+                "high_improvement": 6,
+                "moderate_improvement": 7,
+                "low_or_none": 2
+            }
+        },
+        "level4": {
+            "avg_business_impact_score": 8.53,
+            "business_impact_threshold": 8.0,
+            "roi": {
+                "num_participants": 15,
+                "incident_cost": 10000.0,
+                "cost_per_participant": 500.0,
+                "total_training_cost": 7500.0,
+                "incidents_before": 51.0,
+                "incidents_after": 17.0,
+                "incidents_prevented": 34.0,
+                "cost_savings": 340000.0,
+                "roi_percent": 4433.0
+            }
+        }
+    },
+    "visualization_file": "visualizations/kirkpatrick_overview_20260220_101512.png"
+}
