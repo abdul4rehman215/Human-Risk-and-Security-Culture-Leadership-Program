@@ -1,0 +1,19 @@
+•	{
+  "total_ambassadors": 4,
+  "total_activities": 5,
+  "total_people_reached": 115,
+  "activities_per_ambassador_avg": 1.25,
+  "department_coverage": {
+    "IT": 1,
+    "Finance": 1,
+    "HR": 1,
+    "Operations": 1
+  },
+  "monthly_trends": [
+    {
+      "month": "2026-01",
+      "activities": 5,
+      "participants": 115
+    }
+  ]
+}
