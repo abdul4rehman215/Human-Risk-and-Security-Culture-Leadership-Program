@@ -1,0 +1,20 @@
+PHISHING AWARENESS TRAINING - 5 MINUTES
+
+Introduction (30s):
+"Welcome to phishing awareness training. Learn to identify and respond to phishing attacks."
+
+What is Phishing? (60s):
+"Phishing: cyber attacks impersonating legitimate organizations to steal credentials and data."
+
+Warning Signs (90s):
+1. Urgent or threatening language
+2. Generic greetings
+3. Suspicious sender addresses
+4. Unexpected attachments
+5. Requests for sensitive information
+
+Real Examples (120s):
+"Examine actual phishing emails and identify red flags."
+
+Conclusion (30s):
+"When in doubt, verify independently. Report suspicious emails to IT security."
