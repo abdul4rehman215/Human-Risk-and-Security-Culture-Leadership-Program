@@ -1,0 +1,54 @@
+{
+  "program_info": {
+    "name": "Enterprise Security Culture Program",
+    "start_date": "2024-01-01",
+    "duration_years": 3
+  },
+  "objectives": {
+    "awareness_improvement": {
+      "baseline": 45,
+      "target": 85
+    },
+    "incident_reduction": {
+      "baseline": 100,
+      "target": 40
+    },
+    "training_completion": {
+      "baseline": 55,
+      "target": 90
+    },
+    "compliance_score": {
+      "baseline": 70,
+      "target": 95
+    }
+  },
+  "phases": [
+    {
+      "name": "Foundation",
+      "duration_months": 6,
+      "focus": [
+        "Assessment",
+        "Policy Development",
+        "Initial Training"
+      ]
+    },
+    {
+      "name": "Implementation",
+      "duration_months": 18,
+      "focus": [
+        "Program Rollout",
+        "Training Delivery",
+        "Culture Change"
+      ]
+    },
+    {
+      "name": "Optimization",
+      "duration_months": 12,
+      "focus": [
+        "Continuous Improvement",
+        "Advanced Training",
+        "Sustainability"
+      ]
+    }
+  ]
+}
