@@ -1,0 +1,215 @@
+toor@ip-172-31-10-206:~$ mkdir -p ~/addie_training_lab/{analyze,design,develop,implement,evaluate,scripts,data,reports}
+toor@ip-172-31-10-206:~$ cd ~/addie_training_lab
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ls
+analyze  data  design  develop  evaluate  implement  reports  scripts
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/addie_framework.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ./scripts/addie_framework.py
+
+=== ADDIE PROJECT OVERVIEW ===
+Project Name: Security_Awareness_Training
+Created: 2026-02-20T09:18:42.203119
+
+Analyze       : pending
+Design        : pending
+Develop       : pending
+Implement     : pending
+Evaluate      : pending
+
+Completion: 0%
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/analyze_phase.py scripts/sample_analysis_data.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ./scripts/sample_analysis_data.py
+Sample analysis data saved to: data/sample_analysis_20260220_091945.json
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ls -lh data/
+total 4.0K
+-rw-r--r-- 1 toor toor 2.4K Feb 20 09:19 sample_analysis_20260220_091945.json
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/design_phase.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ./scripts/design_phase.py
+
+=== LEARNING OBJECTIVES ===
+
+=== ASSESSMENT STRATEGY ===
+
+=== INSTRUCTIONAL STRATEGY ===
+
+=== CONTENT OUTLINE ===
+
+=== DELIVERY METHOD ===
+Design JSON saved to design/design_20260220_092142.json
+Design text document saved to design/design_20260220_092142.txt
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ls -lh design/
+total 16K
+-rw-r--r-- 1 toor toor 6.1K Feb 20 09:21 design_20260220_092142.json
+-rw-r--r-- 1 toor toor 7.3K Feb 20 09:21 design_20260220_092142.txt
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/develop_phase.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ./scripts/develop_phase.py
+
+=== DEVELOP: CONTENT MATERIALS ===
+
+=== DEVELOP: ASSESSMENTS ===
+
+=== DEVELOP: MULTIMEDIA RESOURCES ===
+
+=== DEVELOP: QUALITY ASSURANCE ===
+Development JSON saved to develop/develop_20260220_092421.json
+Development text report saved to develop/develop_20260220_092421.txt
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ls -lh develop/
+total 44K
+-rw-r--r-- 1 toor toor 18K Feb 20 09:24 develop_20260220_092421.json
+-rw-r--r-- 1 toor toor 22K Feb 20 09:24 develop_20260220_092421.txt
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/implement_phase.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/evaluate_phase.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ nano scripts/complete_addie_workflow.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ chmod +x scripts/complete_addie_workflow.py
+
+toor@ip-172-31-10-206:~/addie_training_lab$ ./scripts/complete_addie_workflow.py
+ANALYZE phase updated to in_progress
+
+=== TRAINING NEEDS ASSESSMENT ===
+Enter performance gaps (comma separated): High phishing click rates, weak password hygiene, slow incident reporting
+Enter business objectives (comma separated): Reduce incidents, improve compliance, strengthen culture
+Enter training priority (Low/Medium/High): High
+
+=== LEARNER ANALYSIS ===
+Enter learner roles (comma separated): Office Staff, Managers, IT
+Enter experience level: Mixed
+Enter training location: Online
+
+=== GOAL IDENTIFICATION ===
+Enter learning goals (comma separated): Identify phishing attempts, Create strong passwords, Report incidents properly
+Enter success metrics (comma separated): Phishing clicks <10%, Password compliance >90%, Completion >95%
+Enter timeline (weeks): 4
+Enter budget: 15000
+Enter available resources (comma separated): LMS, SMEs, Consultant
+Analysis report saved to /home/toor/addie_training_lab/analyze/analysis_20260220_093112.json
+ANALYZE phase updated to complete
+
+DESIGN phase updated to in_progress
+
+=== LEARNING OBJECTIVES ===
+
+=== ASSESSMENT STRATEGY ===
+
+=== INSTRUCTIONAL STRATEGY ===
+
+=== CONTENT OUTLINE ===
+
+=== DELIVERY METHOD ===
+Design JSON saved to /home/toor/addie_training_lab/design/design_20260220_093112.json
+Design text document saved to /home/toor/addie_training_lab/design/design_20260220_093112.txt
+DESIGN phase updated to complete
+
+DEVELOP phase updated to in_progress
+
+=== DEVELOP: CONTENT MATERIALS ===
+
+=== DEVELOP: ASSESSMENTS ===
+
+=== DEVELOP: MULTIMEDIA RESOURCES ===
+
+=== DEVELOP: QUALITY ASSURANCE ===
+Development JSON saved to /home/toor/addie_training_lab/develop/develop_20260220_093112.json
+Development text report saved to /home/toor/addie_training_lab/develop/develop_20260220_093112.txt
+DEVELOP phase updated to complete
+
+IMPLEMENT phase updated to in_progress
+
+=== IMPLEMENT: DEPLOYMENT PLANNING ===
+Enter deployment start date (YYYY-MM-DD): 2026-03-01
+Enter number of sessions: 4
+Enter delivery platform (e.g., LMS): LMS
+
+=== IMPLEMENT: PARTICIPANT TRACKING ===
+Enter participant names (comma separated): Ali, Sara, Omar
+
+=== IMPLEMENT: SUPPORT LOGGING ===
+Enter support tickets. Type 'done' when finished.
+
+Support issue (or 'done'): Login issue on LMS
+Resolution: Reset password and cleared cache
+Support issue (or 'done'): done
+
+=== IMPLEMENT: COMPLETION UPDATE ===
+Enter progress percent for Ali (0-100): 100
+Enter progress percent for Sara (0-100): 80
+Enter progress percent for Omar (0-100): 100
+Implementation JSON saved to /home/toor/addie_training_lab/implement/implement_20260220_093112.json
+Implementation text report saved to /home/toor/addie_training_lab/implement/implement_20260220_093112.txt
+IMPLEMENT phase updated to complete
+
+EVALUATE phase updated to in_progress
+
+=== EVALUATE: LEVEL 1 (REACTION) ===
+Enter average satisfaction rating (1-5): 4.2
+Enter top feedback themes (comma separated): Useful examples, more scenarios
+
+=== EVALUATE: LEVEL 2 (LEARNING) ===
+Enter average pre-test score percent: 55
+Enter average post-test score percent: 84
+
+=== EVALUATE: LEVEL 3 (BEHAVIOR) ===
+Enter behavior observation window (e.g., 30 days): 30 days
+Enter supervisor feedback summary: Reporting improved and fewer suspicious clicks observed.
+
+=== EVALUATE: LEVEL 4 (RESULTS) ===
+Enter number of incidents BEFORE training: 25
+Enter number of incidents AFTER training: 15
+Enter training cost: 15000
+
+=== GENERATE RECOMMENDATIONS ===
+Evaluation JSON saved to /home/toor/addie_training_lab/evaluate/evaluate_20260220_093112.json
+Evaluation text report saved to /home/toor/addie_training_lab/evaluate/evaluate_20260220_093112.txt
+EVALUATE phase updated to complete
+Project saved successfully to data/Security_Awareness_Training_20260220_093112.json
+
+=== WORKFLOW COMPLETE ===
+Final report saved: /home/toor/addie_training_lab/reports/final_project_report_20260220_093112.txt
+
+=== ADDIE PROJECT OVERVIEW ===
+Project Name: Security_Awareness_Training
+Created: 2026-02-20T09:18:42.203119
+
+Analyze       : complete
+Design        : complete
+Develop       : complete
+Implement     : complete
+Evaluate      : complete
+
+Completion: 100%
+
+toor@ip-172-31-10-206:~/addie_training_lab$ find . -maxdepth 2 -type f | sort
+./analyze/analysis_20260220_093112.json
+./data/Security_Awareness_Training_20260220_093112.json
+./data/sample_analysis_20260220_091945.json
+./design/design_20260220_093112.json
+./design/design_20260220_093112.txt
+./develop/develop_20260220_093112.json
+./develop/develop_20260220_093112.txt
+./evaluate/evaluate_20260220_093112.json
+./evaluate/evaluate_20260220_093112.txt
+./implement/implement_20260220_093112.json
+./implement/implement_20260220_093112.txt
+./reports/final_project_report_20260220_093112.txt
+./scripts/addie_framework.py
+./scripts/analyze_phase.py
+./scripts/complete_addie_workflow.py
+./scripts/design_phase.py
+./scripts/develop_phase.py
+./scripts/evaluate_phase.py
+./scripts/implement_phase.py
+./scripts/sample_analysis_data.py
