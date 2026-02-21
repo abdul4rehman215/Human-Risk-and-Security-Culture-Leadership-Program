@@ -195,7 +195,7 @@ This portfolio transitions from:
 ![Focus](https://img.shields.io/badge/Focus-ROI%20Modeling-4A90E2?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/Focus-Compliance%20vs%20Impact-B91C1C?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/Focus-Communication%20Systems-4A90E2?style=for-the-badge)
-![Focus](https://img.shields.io/badge/Focus-Long-term%20Program%20Governance-16A34A?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Long%20term%20Program%20Governance-16A34A?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/Focus-Maturity%20Engine-F59E0B?style=for-the-badge)
 
 </div>
