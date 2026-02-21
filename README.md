@@ -75,7 +75,14 @@ This portfolio transitions from:
 
 ## 🔹 Section 1: Human Risk & Behavioral Security Engineering (Labs 1–3)
 
-Focus: Risk quantification, CTI integration, behavioral science modeling.
+<div>
+
+![Category](https://img.shields.io/badge/Category-Human%20Risk%20Engineering-7B68EE?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Risk%20Quantification-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-CTI%20Integration-B91C1C?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Behavioral%20Science%20Modeling-16A34A?style=for-the-badge)
+
+</div>
 
 | Lab | Title | Core Focus |
 |-----|-------|------------|
@@ -96,7 +103,15 @@ Focus: Risk quantification, CTI integration, behavioral science modeling.
 
 ## 🔹 Section 2: Security Foundations – Awareness, Risk & Benchmarking (Labs 4–8)
 
-Focus: Maturity modeling, role-based risk, benchmarking & training pipeline engineering.
+<div>
+
+![Category](https://img.shields.io/badge/Category-Security%20Foundations-9333EA?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Maturity%20Modeling-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Risk%20Classification-B91C1C?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Training%20Pipeline%20Engineering-16A34A?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Benchmarking-F59E0B?style=for-the-badge)
+
+</div>
 
 | Lab | Title | Core Focus |
 |-----|-------|------------|
@@ -118,7 +133,14 @@ Focus: Maturity modeling, role-based risk, benchmarking & training pipeline engi
 
 ## 🔹 Section 3: Training Engineering & Evaluation (Labs 9–10)
 
-Focus: Instructional design automation & quantitative impact measurement.
+<div>
+
+![Category](https://img.shields.io/badge/Category-Training%20Engineering-6366F1?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Instructional%20Design%20Automation-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Quantitative%20Impact%20Measurement-B91C1C?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-ROI%20Analytics-16A34A?style=for-the-badge)
+
+</div>
 
 | Lab | Title | Core Focus |
 |-----|-------|------------|
@@ -137,7 +159,15 @@ Focus: Instructional design automation & quantitative impact measurement.
 
 ## 🔹 Section 4: Security Awareness Engineering (Labs 11–15)
 
-Focus: Personalization, segmentation, behavior change analytics, ambassador programs, culture dashboards.
+<div>
+
+![Category](https://img.shields.io/badge/Category-Awareness%20Engineering-DB2777?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Personalization-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Segmentation-B91C1C?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Behavior%20Change%20Analytics-16A34A?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Culture%20Dashboards-F59E0B?style=for-the-badge)
+
+</div>
 
 | Lab | Title | Core Focus |
 |-----|-------|------------|
@@ -159,7 +189,17 @@ Focus: Personalization, segmentation, behavior change analytics, ambassador prog
 
 ## 🔹 Section 5: Security Culture Engineering & Program Governance (Labs 16–20)
 
-Focus: ROI modeling, compliance vs impact, communication systems, long-term governance, maturity engine.
+<div>
+
+![Category](https://img.shields.io/badge/Category-Culture%20Engineering-1E40AF?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-ROI%20Modeling-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Compliance%20vs%20Impact-B91C1C?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Communication%20Systems-4A90E2?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Long-term%20Program%20Governance-16A34A?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Maturity%20Engine-F59E0B?style=for-the-badge)
+
+</div>
+
 
 | Lab | Title | Business Layer |
 |-----|-------|----------------|
