@@ -26,6 +26,9 @@
 ![Training Engineering](https://img.shields.io/badge/Training-Engineering-success?style=for-the-badge)
 ![ROI Modeling](https://img.shields.io/badge/ROI-Financial%20Justification-brightgreen?style=for-the-badge)
 ![Governance](https://img.shields.io/badge/Program-Governance-critical?style=for-the-badge)
+![Category](https://img.shields.io/badge/Category-Security%20Culture%20Engineering-6f42c1?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Human%20Risk%20Quantification-0ea5e9?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Training%20Effectiveness%20%26%20ROI-f97316?style=for-the-badge)
 
 <!-- ===================== SCOPE ===================== -->
 
@@ -45,23 +48,44 @@
 
 ---
 
-# 📌 Executive Overview
+## 🎯 Executive Summary
 
-This repository demonstrates **end-to-end engineering of enterprise security culture programs** — moving from individual human risk scoring to full-scale strategic governance and maturity evaluation.
+This repository demonstrates practical capability across:
 
-Unlike theory-only awareness material, this program delivers:
+- ✅ **Human Risk Engineering** (KRIs, scoring models, risk insights)
+- ✅ **Behavioral Security Modeling** (Fogg B=MAT → risk mapping + interventions)
+- ✅ **CTI-Driven Prioritization** (normalization, scoring, triage outputs)
+- ✅ **Training Engineering** (content pipeline, distribution, validation)
+- ✅ **Training Effectiveness & ROI** (Kirkpatrick L1–L4 + business metrics)
+- ✅ **Security Culture Measurement** (maturity scoring + benchmarking)
+- ✅ **Dashboards & Reporting** (Flask/D3/Dash, JSON/CSV/MD outputs)
+- ✅ **Program Governance & Communication** (multi-year planning + engagement tracking)
 
-- ✅ Runnable Python automation scripts  
-- ✅ SQLite-backed data pipelines  
-- ✅ Statistical analysis & ROI modeling  
-- ✅ Executive-ready JSON / CSV / Markdown reports  
-- ✅ Visual dashboards (Flask, Dash, D3.js)  
-- ✅ Media automation pipelines (OBS → FFmpeg → Distribution)  
-- ✅ Structured program governance frameworks  
-
-This portfolio transitions from:
+**Portfolio positioning:**
 
 > **Security Practitioner → Security Culture & Capability Engineer**
+
+---
+
+## 📌 About This Repository
+
+A structured **20-lab program** simulating real enterprise workflows such as:
+
+- Human risk assessment and prioritization
+- Security awareness maturity benchmarking
+- Role-based risk identification and strategic risk planning
+- Training content production + delivery pipelines
+- Quantitative evaluation (stats, effect size, ROI modeling)
+- Culture analytics dashboards + executive KPI reporting
+- Governance frameworks, communication systems, and long-term execution
+- Final maturity assessment with packaged deliverables
+
+All labs follow a consistent “evidence-first” structure:
+- `commands.sh` / `commands.txt` (executed commands)
+- `output.txt` (captured outputs)
+- `scripts/` (automation)
+- `reports/` (generated artifacts)
+- `troubleshooting.md` (+ optional `interview_qna.md`)
 
 ---
 
@@ -403,7 +427,7 @@ This forms a **complete enterprise security culture lifecycle model.**
 
 ---
 
-## 🎯 Learning Outcomes Across 20 Labs
+## 🎓 Learning Outcomes Across 20 Labs
 
 By completing this repository, the following core competencies were developed:
 
@@ -418,6 +442,11 @@ By completing this repository, the following core competencies were developed:
 - **Automation-Driven Reporting** (JSON outputs, charts, packaged deliverables)
 
 This reflects enterprise-level security culture program engineering — from **measurement to executive-ready reporting**.
+
+Enterprise-grade, **execution-first** lab series focused on building and measuring **security culture** at scale — from **human risk scoring** to **training engineering**, **impact analytics**, **ROI modeling**, and **maturity-based program assessment**.
+
+> **This is practical implementation — not theory-only documentation.**  
+> Every lab includes scripts, datasets, reports, dashboards, and troubleshooting notes.
 
 ---
 
